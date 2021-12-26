@@ -50,6 +50,11 @@ class Order
      */
     private $product;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Employee::class, inversedBy="orders")
+     */
+    private $employee;
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
@@ -140,6 +145,18 @@ class Order
     public function removeProduct(Product $product): self
     {
         $this->product->removeElement($product);
+
+        return $this;
+    }
+
+    public function getEmployee(): ?Employee
+    {
+        return $this->employee;
+    }
+
+    public function setEmployee(?Employee $employee): self
+    {
+        $this->employee = $employee;
 
         return $this;
     }

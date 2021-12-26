@@ -181,15 +181,16 @@ class Product
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function getPicture()
     {
         return $this->picture;
     }
 
-    public function setPicture(string $picture): self
+    public function setPicture($picture)
     {
-        $this->picture = $picture;
-
+        if($picture != null){
+            $this->picture = $picture; 
+        }
         return $this;
     }
 }

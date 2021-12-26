@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="container col-md-6 mt-3">
-        <h2 class="text-center">EDIT BOOK</h2>
+        <h2 class="text-center">EDIT PHONE</h2>
         <div class="col md-6">
             {{ form_start (productForm) }}
             <div class="form-group">
@@ -22,32 +22,48 @@
                 }}
             </div>
             <div class="form-group">
-                {{ form_label (productForm.year) }}
-                {{ form_widget (productForm.year,
+                {{ form_label (productForm.quantity) }}
+                {{ form_widget (productForm.quantity,
                     {
                         'attr' : {'class' : 'form-control'}
                     })
                 }}
             </div>
             <div class="form-group">
-                {{ form_label (productForm.genre) }}
-                {{ form_widget (productForm.genre,
+                {{ form_label (productForm.category) }}
+                {{ form_widget (productForm.category,
                     {
                         'attr' : {'class' : 'form-control'}
                     })
                 }}
             </div>
             <div class="form-group">
-                {{ form_label (productForm.authors) }}
-                {{ form_widget (productForm.authors,
+                {{ form_label (productForm.status) }}
+                {{ form_widget (productForm.status,
                     {
                         'attr' : {'class' : 'form-control'}
                     })
                 }}
             </div>
             <div class="form-group">
-                {{ form_label (productForm.cover) }}
-                {{ form_widget (productForm.cover,
+                {{ form_label (productForm.orders) }}
+                {{ form_widget (productForm.orders,
+                    {
+                        'attr' : {'class' : 'form-control'}
+                    })
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_label (productForm.vendors) }}
+                {{ form_widget (productForm.vendors,
+                    {
+                        'attr' : {'class' : 'form-control'}
+                    })
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_label (productForm.picture) }}
+                {{ form_widget (productForm.picture,
                     {
                         'attr' : {'class' : 'form-control'}
                     })
