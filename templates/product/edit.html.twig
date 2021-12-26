@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container col-md-6 mt-3">
+        <h2 class="text-center">EDIT BOOK</h2>
+        <div class="col md-6">
+            {{ form_start (productForm) }}
+            <div class="form-group">
+                {{ form_label (productForm.name) }}
+                {{ form_widget (productForm.name,
+                    {
+                        'attr' : {'class' : 'form-control'}
+                    })
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_label (productForm.price) }}
+                {{ form_widget (productForm.price,
+                    {
+                        'attr' : {'class' : 'form-control'}
+                    })
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_label (productForm.year) }}
+                {{ form_widget (productForm.year,
+                    {
+                        'attr' : {'class' : 'form-control'}
+                    })
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_label (productForm.genre) }}
+                {{ form_widget (productForm.genre,
+                    {
+                        'attr' : {'class' : 'form-control'}
+                    })
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_label (productForm.authors) }}
+                {{ form_widget (productForm.authors,
+                    {
+                        'attr' : {'class' : 'form-control'}
+                    })
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_label (productForm.cover) }}
+                {{ form_widget (productForm.cover,
+                    {
+                        'attr' : {'class' : 'form-control'}
+                    })
+                }}
+            </div>
+            <div class="form-gourp text-center mt-3">
+                <input type="submit" class="btn btn-primary"></input>
+            </div>
+            {{ form_end (productForm) }}
+        </div>
+    </div>
+{% endblock %}
