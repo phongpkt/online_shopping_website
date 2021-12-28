@@ -16,6 +16,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'category' => [[], ['_controller' => 'App\\Controller\\CategoryController::index'], [], [['text', '/category']], [], [], []],
     'customer' => [[], ['_controller' => 'App\\Controller\\CustomerController::index'], [], [['text', '/customer']], [], [], []],
+    'employee' => [[], ['_controller' => 'App\\Controller\\EmployeeController::index'], [], [['text', '/employee']], [], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/home']], [], [], []],
     'order_index' => [[], ['_controller' => 'App\\Controller\\OrderController::orderIndex'], [], [['text', '/order']], [], [], []],
     'order_detail' => [['id'], ['_controller' => 'App\\Controller\\OrderController::orderDetail'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/order/detail']], [], [], []],

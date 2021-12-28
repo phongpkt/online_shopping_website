@@ -17,7 +17,7 @@
     </head>
     <body>
         {% block flash %}
-            <div class="container col-md-6 mt-3">
+            <div class="container">
                 {% for flash in app.flashes("Error") %}
                     <p class="alert alert-warning">{{ flash }} </p>
                 {% endfor %}
@@ -27,13 +27,14 @@
             </div>
         {% endblock %}
         {% block nav %}
-        <nav class="navbar navbar-expand navbar-light bg-light">
-            <div class="nav navbar-nav">
-                {# <h3><a class="nav-item nav-link" href="{{ path('home') }}">Home</a></h3>
-                <h3><a class="nav-item nav-link" href="{{ path('category_index') }}">Category</a></h3>
+        <nav class="navbar navbar-expand navbar-dark bg-dark" style="margin:0;padding:5">
+            <div class="nav navbar-nav" style="margin:0;padding:5">
+                <h3><a class="nav-item nav-link" href="{{ path('home') }}">Home</a></h3>
+                <h3><a class="nav-item nav-link" href="">Category</a></h3>
                 <h3><a class="nav-item nav-link" href="{{ path('product_index') }}">Product</a></h3>
-                <h3><a class="nav-item nav-link" href="{{ path('customer_index') }}">Customer</a></h3>
-                <h3><a class="nav-item nav-link" href="{{ path('order_index') }}">Order</a></h3> #}
+                <h3><a class="nav-item nav-link" href="">Customer</a></h3>
+                <h3><a class="nav-item nav-link" href="{{ path('order_index') }}">Order</a></h3>
+                <h3><a class="nav-item nav-link" href="">Logout</a></h3>
             </div>
         </nav>
         {% endblock %}

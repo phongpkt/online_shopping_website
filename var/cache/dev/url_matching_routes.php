@@ -15,6 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/category' => [[['_route' => 'category', '_controller' => 'App\\Controller\\CategoryController::index'], null, null, null, false, false, null]],
         '/customer' => [[['_route' => 'customer', '_controller' => 'App\\Controller\\CustomerController::index'], null, null, null, false, false, null]],
+        '/employee' => [[['_route' => 'employee', '_controller' => 'App\\Controller\\EmployeeController::index'], null, null, null, false, false, null]],
         '/home' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/order' => [[['_route' => 'order_index', '_controller' => 'App\\Controller\\OrderController::orderIndex'], null, null, null, false, false, null]],
         '/order/add' => [[['_route' => 'order_add', '_controller' => 'App\\Controller\\OrderController::orderAdd'], null, null, null, false, false, null]],

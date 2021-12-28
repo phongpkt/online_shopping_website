@@ -65,7 +65,8 @@ class __TwigTemplate_ed954358cf2f2928cec9695403f7f3569c88e3e4ccfaf81fdff0b51c3e0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello HomeController!";
+        echo "Hello HomeController!
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -74,7 +75,7 @@ class __TwigTemplate_ed954358cf2f2928cec9695403f7f3569c88e3e4ccfaf81fdff0b51c3e0
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,30 +85,90 @@ class __TwigTemplate_ed954358cf2f2928cec9695403f7f3569c88e3e4ccfaf81fdff0b51c3e0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        // line 7
+        echo "\t<style>
+\t\t.circle {
+\t\t\tborder-radius: 50%
+\t\t}
+\t\t.row {
+\t\t\twidth: 100%;
+\t\t}
+\t\t.quarter {
+\t\t\tfloat: left;
+\t\t\twidth: 33.333333%;
+\t\t}
+\t\t.padding-64 {
+\t\t\tpadding-top: 64px !important;
+\t\t\tpadding-bottom: 64px !important
+\t\t}
+\t\t.center {
+\t\t\ttext-align: center !important
+\t\t}
+\t</style>
+\t<!-- Image Header -->
+\t<div class=\"display-container animate-opacity\">
+\t\t<img src=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/samsung.jpg"), "html", null, true);
+        echo "\" alt=\"Image header\" style=\"width:100%\">
+\t</div>
+\t<!-- Team Container -->
+\t<div class=\"container padding-64 center\">
+\t\t<h2>OUR TEAM</h2>
+\t\t<p>Meet the team - our office rats:</p>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
+\t\t<div class=\"row\">
+\t\t\t<div class=\"quarter\">
+\t\t\t\t<img src=\"";
+        // line 37
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("team/profile.png"), "html", null, true);
+        echo "\" alt=\"Boss\" style=\"width:25%\" class=\"circle\">
+\t\t\t\t<h3>Thanh Phong</h3>
+\t\t\t\t<p>Web Designer</p>
+\t\t\t</div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/xampp/htdocs/assignment/webproject/src/Controller/HomeController.php", 0), "html", null, true);
-        echo "\">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/xampp/htdocs/assignment/webproject/templates/home/index.html.twig", 0), "html", null, true);
-        echo "\">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+\t\t\t<div class=\"quarter\">
+\t\t\t\t<img src=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("team/profile.png"), "html", null, true);
+        echo "\" alt=\"Boss\" style=\"width:25%\" class=\"circle\">
+\t\t\t\t<h3>Gia Khanh</h3>
+\t\t\t\t<p>Web Designer</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"quarter\">
+\t\t\t\t<img src=\"";
+        // line 49
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("team/profile.png"), "html", null, true);
+        echo "\" alt=\"Boss\" style=\"width:25%\" class=\"circle\">
+\t\t\t\t<h3>Minh Quan</h3>
+\t\t\t\t<p>Web Designer</p>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+\t<!-- Footer -->
+\t<footer class=\"container padding-32 theme-d1 center\">
+\t\t<h4>Follow Us</h4>
+\t\t<a class=\"text-decoration-none\" href=\"\" title=\"Facebook\">
+\t\t\t<img src=\"";
+        // line 59
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/facebook.png"), "html", null, true);
+        echo "\" width=\"50px\" height=\"50px\">
+\t\t</a>
+\t\t<a class=\"text-decoration-none\" href=\"\" title=\"Twitter\">
+\t\t\t<img src=\"";
+        // line 62
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/instagram.png"), "html", null, true);
+        echo "\" width=\"50px\" height=\"50px\">
+\t\t</a>
+\t\t<a class=\"text-decoration-none\" href=\"\" title=\"Instagram\">
+\t\t\t<img src=\"";
+        // line 65
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/twitter.png"), "html", null, true);
+        echo "\" width=\"50px\" height=\"50px\">
+\t\t</a>
+\t\t<p>Copyright</p>
+\t</footer>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -129,30 +190,79 @@ class __TwigTemplate_ed954358cf2f2928cec9695403f7f3569c88e3e4ccfaf81fdff0b51c3e0
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  167 => 65,  161 => 62,  155 => 59,  142 => 49,  133 => 43,  124 => 37,  112 => 28,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+\t<style>
+\t\t.circle {
+\t\t\tborder-radius: 50%
+\t\t}
+\t\t.row {
+\t\t\twidth: 100%;
+\t\t}
+\t\t.quarter {
+\t\t\tfloat: left;
+\t\t\twidth: 33.333333%;
+\t\t}
+\t\t.padding-64 {
+\t\t\tpadding-top: 64px !important;
+\t\t\tpadding-bottom: 64px !important
+\t\t}
+\t\t.center {
+\t\t\ttext-align: center !important
+\t\t}
+\t</style>
+\t<!-- Image Header -->
+\t<div class=\"display-container animate-opacity\">
+\t\t<img src=\"{{ asset('images/samsung.jpg') }}\" alt=\"Image header\" style=\"width:100%\">
+\t</div>
+\t<!-- Team Container -->
+\t<div class=\"container padding-64 center\">
+\t\t<h2>OUR TEAM</h2>
+\t\t<p>Meet the team - our office rats:</p>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+\t\t<div class=\"row\">
+\t\t\t<div class=\"quarter\">
+\t\t\t\t<img src=\"{{ asset('team/profile.png') }}\" alt=\"Boss\" style=\"width:25%\" class=\"circle\">
+\t\t\t\t<h3>Thanh Phong</h3>
+\t\t\t\t<p>Web Designer</p>
+\t\t\t</div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'C:/xampp/htdocs/assignment/webproject/src/Controller/HomeController.php'|file_link(0) }}\">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'C:/xampp/htdocs/assignment/webproject/templates/home/index.html.twig'|file_link(0) }}\">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+\t\t\t<div class=\"quarter\">
+\t\t\t\t<img src=\"{{ asset('team/profile.png') }}\" alt=\"Boss\" style=\"width:25%\" class=\"circle\">
+\t\t\t\t<h3>Gia Khanh</h3>
+\t\t\t\t<p>Web Designer</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"quarter\">
+\t\t\t\t<img src=\"{{ asset('team/profile.png') }}\" alt=\"Boss\" style=\"width:25%\" class=\"circle\">
+\t\t\t\t<h3>Minh Quan</h3>
+\t\t\t\t<p>Web Designer</p>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+\t<!-- Footer -->
+\t<footer class=\"container padding-32 theme-d1 center\">
+\t\t<h4>Follow Us</h4>
+\t\t<a class=\"text-decoration-none\" href=\"\" title=\"Facebook\">
+\t\t\t<img src=\"{{ asset('button/facebook.png')}}\" width=\"50px\" height=\"50px\">
+\t\t</a>
+\t\t<a class=\"text-decoration-none\" href=\"\" title=\"Twitter\">
+\t\t\t<img src=\"{{ asset('button/instagram.png')}}\" width=\"50px\" height=\"50px\">
+\t\t</a>
+\t\t<a class=\"text-decoration-none\" href=\"\" title=\"Instagram\">
+\t\t\t<img src=\"{{ asset('button/twitter.png')}}\" width=\"50px\" height=\"50px\">
+\t\t</a>
+\t\t<p>Copyright</p>
+\t</footer>
 {% endblock %}
 ", "home/index.html.twig", "C:\\xampp\\htdocs\\assignment\\webproject\\templates\\home\\index.html.twig");
     }

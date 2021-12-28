@@ -73,10 +73,10 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         // line 29
         echo "        ";
         $this->displayBlock('nav', $context, $blocks);
-        // line 40
+        // line 41
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 43
+        // line 44
         echo "    </body>
 </html>
 ";
@@ -162,7 +162,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "flash"));
 
         // line 20
-        echo "            <div class=\"container col-md-6 mt-3\">
+        echo "            <div class=\"container\">
                 ";
         // line 21
         $context['_parent'] = $context;
@@ -213,11 +213,24 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "nav"));
 
         // line 30
-        echo "        <nav class=\"navbar navbar-expand navbar-light bg-light\">
-            <div class=\"nav navbar-nav\">
-                ";
-        // line 37
-        echo "            </div>
+        echo "        <nav class=\"navbar navbar-expand navbar-dark bg-dark\" style=\"margin:0;padding:5\">
+            <div class=\"nav navbar-nav\" style=\"margin:0;padding:5\">
+                <h3><a class=\"nav-item nav-link\" href=\"";
+        // line 32
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">Home</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"\">Category</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
+        echo "\">Product</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"\">Customer</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"";
+        // line 36
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_index");
+        echo "\">Order</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"\">Logout</a></h3>
+            </div>
         </nav>
         ";
         
@@ -228,7 +241,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
 
     }
 
-    // line 40
+    // line 41
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -238,7 +251,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 41
+        // line 42
         echo "        
         ";
         
@@ -256,7 +269,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
 
     public function getDebugInfo()
     {
-        return array (  242 => 41,  232 => 40,  220 => 37,  216 => 30,  206 => 29,  195 => 27,  186 => 25,  181 => 24,  172 => 22,  168 => 21,  165 => 20,  155 => 19,  143 => 14,  133 => 13,  121 => 9,  111 => 8,  92 => 5,  80 => 43,  77 => 40,  74 => 29,  72 => 19,  68 => 17,  66 => 13,  63 => 12,  60 => 8,  55 => 5,  49 => 1,);
+        return array (  255 => 42,  245 => 41,  230 => 36,  225 => 34,  220 => 32,  216 => 30,  206 => 29,  195 => 27,  186 => 25,  181 => 24,  172 => 22,  168 => 21,  165 => 20,  155 => 19,  143 => 14,  133 => 13,  121 => 9,  111 => 8,  92 => 5,  80 => 44,  77 => 41,  74 => 29,  72 => 19,  68 => 17,  66 => 13,  63 => 12,  60 => 8,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -280,7 +293,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
     </head>
     <body>
         {% block flash %}
-            <div class=\"container col-md-6 mt-3\">
+            <div class=\"container\">
                 {% for flash in app.flashes(\"Error\") %}
                     <p class=\"alert alert-warning\">{{ flash }} </p>
                 {% endfor %}
@@ -290,13 +303,14 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
             </div>
         {% endblock %}
         {% block nav %}
-        <nav class=\"navbar navbar-expand navbar-light bg-light\">
-            <div class=\"nav navbar-nav\">
-                {# <h3><a class=\"nav-item nav-link\" href=\"{{ path('home') }}\">Home</a></h3>
-                <h3><a class=\"nav-item nav-link\" href=\"{{ path('category_index') }}\">Category</a></h3>
+        <nav class=\"navbar navbar-expand navbar-dark bg-dark\" style=\"margin:0;padding:5\">
+            <div class=\"nav navbar-nav\" style=\"margin:0;padding:5\">
+                <h3><a class=\"nav-item nav-link\" href=\"{{ path('home') }}\">Home</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"\">Category</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"{{ path('product_index') }}\">Product</a></h3>
-                <h3><a class=\"nav-item nav-link\" href=\"{{ path('customer_index') }}\">Customer</a></h3>
-                <h3><a class=\"nav-item nav-link\" href=\"{{ path('order_index') }}\">Order</a></h3> #}
+                <h3><a class=\"nav-item nav-link\" href=\"\">Customer</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"{{ path('order_index') }}\">Order</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"\">Logout</a></h3>
             </div>
         </nav>
         {% endblock %}

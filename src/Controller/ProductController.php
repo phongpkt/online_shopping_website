@@ -166,7 +166,7 @@ class ProductController extends AbstractController
      */
     public function searchProductByName(ProductRepository $productRepository, Request $request){
         $name = $request->get("name");
-        $products = $productRepository->searchByTitle($name);
+        $products = $productRepository->searchByName($name);
         return $this->render("product/index.html.twig",
         [
             'products' => $products
