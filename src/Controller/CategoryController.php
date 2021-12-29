@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Form\CategoryType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,7 +25,7 @@ class CategoryController extends AbstractController
      * @Route("/category/delete/{id}", name = "category_delete")
      */
     public function categoryDelete($id) {
-        $category = $this->getDoctrine()->getRepository(category::class)->find($id);
+        $category = $this->getDoctrine()->getRepository(Category::class)->find($id);
         if ($category == null) {
             $this->addFlash("Error", "Category delete failed");
         } else {
@@ -40,8 +41,8 @@ class CategoryController extends AbstractController
      * @Route("/category/add", name = "category_add")
      */
     public function categoryAdd(Request $request) {
-        $category = new category();
-        $form = $this->createForm(categoryType::class, $category);
+        $category = new Category();
+        $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -55,7 +56,7 @@ class CategoryController extends AbstractController
 
         return $this->renderForm("category/add.html.twig",
         [
-            'categoryForm' => $category
+            'categoryForm' => $form
         ]);
     }
 
@@ -63,8 +64,8 @@ class CategoryController extends AbstractController
      * @Route("/category/edit/{id}", name = "category_edit")
      */
     public function genreEdit(Request $request, $id) {
-        $category = $this->getDoctrine()->getRepository(category::class)->find($id);
-        $form = $this->createForm(categoryType::class, $category);
+        $category = $this->getDoctrine()->getRepository(Category::class)->find($id);
+        $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

@@ -42,7 +42,7 @@ class VendorController extends AbstractController
      * @Route("vendor/delete/{id}", name="vendor_delete");
      */
     public function vendorDelete ($id) {
-        $vendor = $this->getDoctrine()->getRepository(Vemder::class)->find($id);
+        $vendor = $this->getDoctrine()->getRepository(Vendor::class)->find($id);
         if ($vendor == null) {
             $this->addFlash("Error", "vendor delete failed");
         } else {
