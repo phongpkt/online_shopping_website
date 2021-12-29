@@ -70,10 +70,13 @@ class __TwigTemplate_4daea57e20d672b8205f3dafe4a7ad90360c82cd76f70bb7539e0f8fdaf
         // line 5
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             // line 6
-            echo "    <a class=\"btn btn-primary\" href=\"";
+            echo "    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_add");
             echo "\">
-        Add product
+        <img src=\"";
+            // line 7
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/add.png"), "html", null, true);
+            echo "\" width=\"200px\" height=\"220px\">
     </a>
     ";
         }
@@ -180,21 +183,20 @@ class __TwigTemplate_4daea57e20d672b8205f3dafe4a7ad90360c82cd76f70bb7539e0f8fdaf
                     ";
             }
             // line 55
-            echo "                </tr>    
-                
+            echo "                </tr>
             </tbody>
         </table>
     ";
         } else {
-            // line 60
+            // line 59
             echo "        <h3> product not existed </h3>
         <a href=\"";
-            // line 61
+            // line 60
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
             echo "\">Redirect to product list </a>
     ";
         }
-        // line 63
+        // line 62
         echo "    </div>
 ";
         
@@ -217,7 +219,7 @@ class __TwigTemplate_4daea57e20d672b8205f3dafe4a7ad90360c82cd76f70bb7539e0f8fdaf
 
     public function getDebugInfo()
     {
-        return array (  198 => 63,  193 => 61,  190 => 60,  183 => 55,  176 => 51,  172 => 50,  167 => 48,  163 => 47,  160 => 46,  158 => 45,  154 => 44,  151 => 43,  142 => 41,  138 => 40,  132 => 37,  126 => 34,  121 => 32,  117 => 31,  113 => 30,  109 => 29,  103 => 25,  99 => 23,  97 => 22,  84 => 11,  81 => 10,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  200 => 62,  195 => 60,  192 => 59,  186 => 55,  179 => 51,  175 => 50,  170 => 48,  166 => 47,  163 => 46,  161 => 45,  157 => 44,  154 => 43,  145 => 41,  141 => 40,  135 => 37,  129 => 34,  124 => 32,  120 => 31,  116 => 30,  112 => 29,  106 => 25,  102 => 23,  100 => 22,  87 => 11,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -227,8 +229,8 @@ class __TwigTemplate_4daea57e20d672b8205f3dafe4a7ad90360c82cd76f70bb7539e0f8fdaf
 {% block body %}
     <div class=\"container-md col-md-8 mt-3 text-center\">
     {% if is_granted(\"ROLE_ADMIN\") %}
-    <a class=\"btn btn-primary\" href=\"{{ path('product_add') }}\">
-        Add product
+    <a href=\"{{ path('product_add') }}\">
+        <img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
     </a>
     {% endif %}
     {% if product != null %}
@@ -276,8 +278,7 @@ class __TwigTemplate_4daea57e20d672b8205f3dafe4a7ad90360c82cd76f70bb7539e0f8fdaf
                         </a>
                     </td>
                     {% endif %}
-                </tr>    
-                
+                </tr>
             </tbody>
         </table>
     {% else %}

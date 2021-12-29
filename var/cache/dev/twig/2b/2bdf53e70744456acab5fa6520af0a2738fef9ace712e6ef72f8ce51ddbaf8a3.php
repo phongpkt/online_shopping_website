@@ -75,8 +75,8 @@ class __TwigTemplate_e7773d88f68ba9fd7c0f4508eb19601c10e43be1fca70741ca3f9fb99c8
             echo "\">
 \t\t\t<img src=\"";
             // line 7
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/add.jpg"), "html", null, true);
-            echo "\" width=\"80\" heigh=\"60\">
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/add.png"), "html", null, true);
+            echo "\" width=\"200px\" height=\"220px\">
 \t\t</a>
 \t\t";
         }
@@ -184,7 +184,7 @@ class __TwigTemplate_e7773d88f68ba9fd7c0f4508eb19601c10e43be1fca70741ca3f9fb99c8
 \t<div class=\"container-md col-md-8 mt-3 mb-3 text-center\">
 \t\t{% if is_granted(\"ROLE_ADMIN\") %}
 \t\t<a href=\"{{ path('customer_add') }}\">
-\t\t\t<img src=\"{{ asset('images/add.jpg') }}\" width=\"80\" heigh=\"60\">
+\t\t\t<img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
 \t\t</a>
 \t\t{% endif %}
 \t\t<table class=\"table table-responsive-md mt-3\">

@@ -86,72 +86,64 @@ class __TwigTemplate_400ee7e7e0f7f6ca0fa88bc126584b9184a05ec378fcfe166adcdc1738f
             <tr>
                 <th>Vendor ID</th>
                 <th>Vendor Name</th>
-                ";
-        // line 15
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 16
-            echo "\t\t\t\t\t<th>Actions</th>
-\t\t\t    ";
-        }
-        // line 18
-        echo "            </tr>
+\t\t\t\t<th>Actions</th>
+            </tr>
         </thead>
         <tbody>
             ";
-        // line 21
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["vendors"]) || array_key_exists("vendors", $context) ? $context["vendors"] : (function () { throw new RuntimeError('Variable "vendors" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["vendors"]) || array_key_exists("vendors", $context) ? $context["vendors"] : (function () { throw new RuntimeError('Variable "vendors" does not exist.', 19, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["vendor"]) {
-            // line 22
+            // line 20
             echo "                <tr>
                     <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 23), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
                     <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vendor"], "name", [], "any", false, false, false, 24), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vendor"], "name", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
-                    ";
-            // line 25
+                    <td>
+                        <a class=\"btn btn-primary\" href=\"";
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+            echo "\" style=\"padding:10px;margin-right:20px\">
+                            View detail
+                        </a>
+                        ";
+            // line 27
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 26
-                echo "\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t<a class=\"btn btn-primary\" href=\"";
-                // line 27
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-                echo "\" style=\"padding:10px;margin-right:20px\">
-\t\t\t\t\t\t\t\tView detail
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
-                // line 30
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+                // line 28
+                echo "                        <a class=\"text-decoration-none\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 28)]), "html", null, true);
                 echo "\" style=\"margin-right:20px\">
-\t\t\t\t\t\t\t\t<img src=\"";
-                // line 31
+                            <img src=\"";
+                // line 29
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/edit.png"), "html", null, true);
                 echo "\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
-                // line 33
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 33)]), "html", null, true);
+                        </a>
+                        <a class=\"text-decoration-none\" href=\"";
+                // line 31
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 31)]), "html", null, true);
                 echo "\" onclick=\"return confirm('Do you want to delete this?')\">
-\t\t\t\t\t\t\t\t<img src=\"";
-                // line 34
+                            <img src=\"";
+                // line 32
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/delete.png"), "html", null, true);
                 echo "\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t</td>
-\t\t\t\t\t";
+                        </a>
+                        ";
             }
-            // line 38
-            echo "                </tr>
+            // line 35
+            echo "                    </td>
+                </tr>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['vendor'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 38
         echo "        </tbody>
     </table>
 </div>
@@ -176,7 +168,7 @@ class __TwigTemplate_400ee7e7e0f7f6ca0fa88bc126584b9184a05ec378fcfe166adcdc1738f
 
     public function getDebugInfo()
     {
-        return array (  155 => 40,  148 => 38,  141 => 34,  137 => 33,  132 => 31,  128 => 30,  122 => 27,  119 => 26,  117 => 25,  113 => 24,  109 => 23,  106 => 22,  102 => 21,  97 => 18,  93 => 16,  91 => 15,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  147 => 38,  139 => 35,  133 => 32,  129 => 31,  124 => 29,  119 => 28,  117 => 27,  111 => 24,  106 => 22,  102 => 21,  99 => 20,  95 => 19,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -195,9 +187,7 @@ class __TwigTemplate_400ee7e7e0f7f6ca0fa88bc126584b9184a05ec378fcfe166adcdc1738f
             <tr>
                 <th>Vendor ID</th>
                 <th>Vendor Name</th>
-                {% if is_granted(\"ROLE_ADMIN\") %}
-\t\t\t\t\t<th>Actions</th>
-\t\t\t    {% endif %}
+\t\t\t\t<th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -205,19 +195,19 @@ class __TwigTemplate_400ee7e7e0f7f6ca0fa88bc126584b9184a05ec378fcfe166adcdc1738f
                 <tr>
                     <td>{{ vendor.id }}</td>
                     <td>{{ vendor.name }}</td>
-                    {% if is_granted(\"ROLE_ADMIN\") %}
-\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t<a class=\"btn btn-primary\" href=\"{{ path('vendor_detail', {'id': vendor.id}) }}\" style=\"padding:10px;margin-right:20px\">
-\t\t\t\t\t\t\t\tView detail
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('vendor_edit', {'id': vendor.id}) }}\" style=\"margin-right:20px\">
-\t\t\t\t\t\t\t\t<img src=\"{{ asset('button/edit.png') }}\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('vendor_delete', {'id': vendor.id}) }}\" onclick=\"return confirm('Do you want to delete this?')\">
-\t\t\t\t\t\t\t\t<img src=\"{{ asset('button/delete.png') }}\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t</td>
-\t\t\t\t\t{% endif %}
+                    <td>
+                        <a class=\"btn btn-primary\" href=\"{{ path('vendor_detail', {'id': vendor.id}) }}\" style=\"padding:10px;margin-right:20px\">
+                            View detail
+                        </a>
+                        {% if is_granted(\"ROLE_ADMIN\") %}
+                        <a class=\"text-decoration-none\" href=\"{{ path('vendor_edit', {'id': vendor.id}) }}\" style=\"margin-right:20px\">
+                            <img src=\"{{ asset('button/edit.png') }}\" width=\"50\" height=\"50\">
+                        </a>
+                        <a class=\"text-decoration-none\" href=\"{{ path('vendor_delete', {'id': vendor.id}) }}\" onclick=\"return confirm('Do you want to delete this?')\">
+                            <img src=\"{{ asset('button/delete.png') }}\" width=\"50\" height=\"50\">
+                        </a>
+                        {% endif %}
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

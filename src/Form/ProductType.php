@@ -59,7 +59,7 @@ class ProductType extends AbstractType
             ])
             ->add('picture', FileType::class,
             [
-                'label' => 'Picture',
+                'label' => 'Product picture',
                 'data_class' => null,
                 'required' => is_null($builder->getData()->getPicture())
             ])
@@ -67,6 +67,7 @@ class ProductType extends AbstractType
             [
                 'label' => 'Product Order',
                 'class' => Order::class,
+                'required' => false,
                 'choice_label' => 'location',
                 'multiple' => true,
                 'expanded' => false

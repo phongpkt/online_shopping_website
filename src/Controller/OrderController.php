@@ -94,24 +94,4 @@ class OrderController extends AbstractController
             'orderForm' => $form
         ]);
     }
-    /**
-     * @Route("/order/sort/date/asc", name="sort_order_date_asc")
-     */
-    public function sortOrderDateAsc(OrderRepository $orderRepository){
-        $orders = $orderRepository->sortOrderDateAsc();
-        return $this->render("order/index.html.twig",
-        [
-            'orders' => $orders
-        ]);
-    }
-    /**
-     * @Route("/order/sort/date/desc", name="sort_order_date_desc")
-     */
-    public function sortOrderDateDesc(OrderRepository $orderRepository){
-        $orders = $orderRepository->sortOrderDateDesc();
-        return $this->render("order/index.html.twig",
-        [
-            'orders' => $orders
-        ]);
-    }
 }

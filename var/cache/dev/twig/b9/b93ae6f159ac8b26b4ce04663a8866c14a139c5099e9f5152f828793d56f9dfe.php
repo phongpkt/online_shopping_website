@@ -81,7 +81,7 @@ class __TwigTemplate_12c91578f1bd27ddce831d9d7f3f4e94367a517aaf1309ece83e06e150a
 \t\t";
         }
         // line 10
-        echo "\t\t<div class=\"form-group col-md-4\">
+        echo "\t\t<div class=\"container-md form-group col-md-4\">
 \t\t\t<form action=\"";
         // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("search_product_by_name");
@@ -98,93 +98,45 @@ class __TwigTemplate_12c91578f1bd27ddce831d9d7f3f4e94367a517aaf1309ece83e06e150a
 \t\t";
         } else {
             // line 19
-            echo "\t\t\t<table class=\"table table-responsive-md mt-3\">
-\t\t\t\t<thead>
-\t\t\t\t\t<tr>
-\t\t\t\t\t\t<th>Phone Name</th>
-\t\t\t\t\t\t<th>Phone Price</th>
-\t\t\t\t\t\t<th>Picture</th>
-\t\t\t\t\t\t<th>Status</th>
-\t\t\t\t\t\t";
-            // line 26
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 27
-                echo "\t\t\t\t\t\t\t<th>Actions</th>
-\t\t\t\t\t\t";
-            }
-            // line 29
-            echo "\t\t\t\t\t</tr>
-\t\t\t\t</thead>
-\t\t\t\t<tbody>
-\t\t\t\t\t";
-            // line 32
+            echo "\t\t\t";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 32, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 19, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-                // line 33
-                echo "\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t<td>";
-                // line 34
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 34), "html", null, true);
-                echo "</td>
-\t\t\t\t\t\t\t<td>";
-                // line 35
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 35), "html", null, true);
-                echo "</td>
-\t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t<a href=\"";
-                // line 37
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+                // line 20
+                echo "\t\t\t\t<div class=\"row w3-margin-top\">
+\t\t\t\t\t<div class=\"w3-third\">
+\t\t\t\t\t\t<div class=\"w3-card\">
+\t\t\t\t\t\t\t<a href=\"";
+                // line 23
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 23)]), "html", null, true);
                 echo "\">
-\t\t\t\t\t\t\t\t\t<img src=\"";
-                // line 38
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("product/" . twig_get_attribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 38))), "html", null, true);
-                echo "\" width=\"100\" height=\"120\">
-\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t</td>
-\t\t\t\t\t\t\t<td>";
-                // line 41
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "status", [], "any", false, false, false, 41), "html", null, true);
-                echo "</td>
-\t\t\t\t\t\t\t";
-                // line 42
-                if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                    // line 43
-                    echo "\t\t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
-                    // line 44
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 44)]), "html", null, true);
-                    echo "\" style=\"margin-right:20px\">
-\t\t\t\t\t\t\t\t\t\t<img src=\"";
-                    // line 45
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/edit.png"), "html", null, true);
-                    echo "\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
-                    // line 47
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 47)]), "html", null, true);
-                    echo "\" onclick=\"return confirm('Do you want to delete this?')\">
-\t\t\t\t\t\t\t\t\t\t<img src=\"";
-                    // line 48
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/delete.png"), "html", null, true);
-                    echo "\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</td>
-\t\t\t\t\t\t\t";
-                }
-                // line 52
-                echo "\t\t\t\t\t\t</tr>
-\t\t\t\t\t";
+\t\t\t\t\t\t\t\t<img src=\"";
+                // line 24
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("product/" . twig_get_attribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 24))), "html", null, true);
+                echo "\" style=\"width:30%\">
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<div class=\"w3-container\">
+\t\t\t\t\t\t\t\t<h4>";
+                // line 27
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 27), "html", null, true);
+                echo "</h4>
+\t\t\t\t\t\t\t\t<h5>Price: \$";
+                // line 28
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 28), "html", null, true);
+                echo "</h5>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 54
-            echo "\t\t\t\t</tbody>
-\t\t\t</table>
-\t\t";
+            // line 34
+            echo "\t\t";
         }
-        // line 57
+        // line 35
         echo "\t</div>
 ";
         
@@ -207,7 +159,7 @@ class __TwigTemplate_12c91578f1bd27ddce831d9d7f3f4e94367a517aaf1309ece83e06e150a
 
     public function getDebugInfo()
     {
-        return array (  188 => 57,  183 => 54,  176 => 52,  169 => 48,  165 => 47,  160 => 45,  156 => 44,  153 => 43,  151 => 42,  147 => 41,  141 => 38,  137 => 37,  132 => 35,  128 => 34,  125 => 33,  121 => 32,  116 => 29,  112 => 27,  110 => 26,  101 => 19,  97 => 17,  95 => 16,  87 => 11,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  140 => 35,  137 => 34,  125 => 28,  121 => 27,  115 => 24,  111 => 23,  106 => 20,  101 => 19,  97 => 17,  95 => 16,  87 => 11,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -221,7 +173,7 @@ class __TwigTemplate_12c91578f1bd27ddce831d9d7f3f4e94367a517aaf1309ece83e06e150a
 \t\t\t\t<img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
 \t\t\t</a>
 \t\t{% endif %}
-\t\t<div class=\"form-group col-md-4\">
+\t\t<div class=\"container-md form-group col-md-4\">
 \t\t\t<form action=\"{{path('search_product_by_name')}}\" method=\"POST\">
 \t\t\t\t<input type=\"search\" name=\"name\" required placeholder=\"Enter phone\">
 \t\t\t\t<input type=\"submit\" value=\"Search\">
@@ -230,43 +182,21 @@ class __TwigTemplate_12c91578f1bd27ddce831d9d7f3f4e94367a517aaf1309ece83e06e150a
 \t\t{% if products == null %}
 \t\t\t<h4 class=\"text text-warning\">No phone's found in the database</h4>
 \t\t{% else %}
-\t\t\t<table class=\"table table-responsive-md mt-3\">
-\t\t\t\t<thead>
-\t\t\t\t\t<tr>
-\t\t\t\t\t\t<th>Phone Name</th>
-\t\t\t\t\t\t<th>Phone Price</th>
-\t\t\t\t\t\t<th>Picture</th>
-\t\t\t\t\t\t<th>Status</th>
-\t\t\t\t\t\t{% if is_granted(\"ROLE_ADMIN\") %}
-\t\t\t\t\t\t\t<th>Actions</th>
-\t\t\t\t\t\t{% endif %}
-\t\t\t\t\t</tr>
-\t\t\t\t</thead>
-\t\t\t\t<tbody>
-\t\t\t\t\t{% for product in products %}
-\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t<td>{{ product.name }}</td>
-\t\t\t\t\t\t\t<td>{{ product.price }}</td>
-\t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t<a href=\"{{ path('product_detail', {'id': product.id}) }}\">
-\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('product/'~product.picture) }}\" width=\"100\" height=\"120\">
-\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t</td>
-\t\t\t\t\t\t\t<td>{{ product.status }}</td>
-\t\t\t\t\t\t\t{% if is_granted(\"ROLE_ADMIN\") %}
-\t\t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('product_edit', {'id': product.id}) }}\" style=\"margin-right:20px\">
-\t\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('button/edit.png') }}\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('product_delete', {'id': product.id}) }}\" onclick=\"return confirm('Do you want to delete this?')\">
-\t\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('button/delete.png') }}\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</td>
-\t\t\t\t\t\t\t{% endif %}
-\t\t\t\t\t\t</tr>
-\t\t\t\t\t{% endfor %}
-\t\t\t\t</tbody>
-\t\t\t</table>
+\t\t\t{% for product in products %}
+\t\t\t\t<div class=\"row w3-margin-top\">
+\t\t\t\t\t<div class=\"w3-third\">
+\t\t\t\t\t\t<div class=\"w3-card\">
+\t\t\t\t\t\t\t<a href=\"{{ path('product_detail', {'id': product.id}) }}\">
+\t\t\t\t\t\t\t\t<img src=\"{{ asset('product/'~product.picture) }}\" style=\"width:30%\">
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<div class=\"w3-container\">
+\t\t\t\t\t\t\t\t<h4>{{ product.name }}</h4>
+\t\t\t\t\t\t\t\t<h5>Price: \${{ product.price }}</h5>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t{% endfor %}
 \t\t{% endif %}
 \t</div>
 {% endblock %}

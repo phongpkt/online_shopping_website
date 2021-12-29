@@ -21,7 +21,7 @@ class EmployeeController extends AbstractController
         ]);
     }
     /**
-     * @Route("/employee/detail/{id}", name="employee_detai")
+     * @Route("/employee/detail/{id}", name="employee_detail")
      */
     public function employeeDetail ($id) {
         $employee = $this->getDoctrine()->getRepository(Employee::class)->find($id);

@@ -161,7 +161,7 @@ class __TwigTemplate_4038a77e0312526bef2d730ace5d6d55a7a52fed24067982097a89261ab
         echo "
             </div>
             <div class=\"form-gourp text-center mt-3\">
-                <input type=\"submit\" class=\"btn btn-primary\"></input>
+                <input class=\"btn btn-primary\" type=\"submit\" value=\"Edit\" />
             </div>
             ";
         // line 75
@@ -267,7 +267,7 @@ class __TwigTemplate_4038a77e0312526bef2d730ace5d6d55a7a52fed24067982097a89261ab
                 }}
             </div>
             <div class=\"form-gourp text-center mt-3\">
-                <input type=\"submit\" class=\"btn btn-primary\"></input>
+                <input class=\"btn btn-primary\" type=\"submit\" value=\"Edit\" />
             </div>
             {{ form_end (productForm) }}
         </div>

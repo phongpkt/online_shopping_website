@@ -89,7 +89,7 @@ class ProductController extends AbstractController
             }catch(FileException $e){
                 throwException($e);
             }
-            $$product->setPicture($imageName);
+            $product->setPicture($imageName);
 
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($product);
@@ -113,7 +113,7 @@ class ProductController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) 
         {
-            $file = $form('picture')->getData();
+            $file = $form['picture']->getData();
             if($file != null){
                 $image = $product->getPicture();
                 $imgName = uniqid();
@@ -121,12 +121,11 @@ class ProductController extends AbstractController
                 $imageName = $imgName . "." . $imgExtension;
                 try{
                     $image->move(
-                        $this->getParameter('product_picture'), $imageName
-                    );
+                    $this->getParameter('product_picture'), $imageName);
                 }catch(FileException $e){
                     throwException($e);
                 }
-                $$product->setPicture($imageName);
+                $product->setPicture($imageName);
             }
 
             $manager = $this->getDoctrine()->getManager();
@@ -139,26 +138,6 @@ class ProductController extends AbstractController
         return $this->renderForm("product/edit.html.twig",
         [
             'productForm' => $form
-        ]);
-    }
-    /**
-     * @Route("/product/sort/price/asc", name="sort_product_price_asc")
-     */
-    public function sortProductPriceAsc(ProductRepository $productRepository){
-        $products = $productRepository->sortProductPriceAsc();
-        return $this->render("product/index.html.twig",
-        [
-            'products' => $products
-        ]);
-    }
-    /**
-     * @Route("/product/sort/price/desc", name="sort_product_price_desc")
-     */
-    public function sortProductIdDesc(ProductRepository $productRepository){
-        $products = $productRepository->sortProductPriceDesc();
-        return $this->render("product/index.html.twig",
-        [
-            'products' => $products
         ]);
     }
     /**
