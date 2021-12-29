@@ -44,14 +44,14 @@ class ProductType extends AbstractType
                 'attr' =>
                 [
                     'min' => 0,
-                    'max' => 100
+                    'max' => 999
                 ]
             ])
             ->add('status', ChoiceType::class,
             [
                 'label' => "Status",
                 'required' => true,
-                'attr' =>
+                'choices' =>
                 [
                     'Available' => 'Available',
                     'NotAvailable' => 'Not Available'
@@ -67,11 +67,11 @@ class ProductType extends AbstractType
             [
                 'label' => 'Product Order',
                 'class' => Order::class,
-                'choice_label' => 'name',
+                'choice_label' => 'location',
                 'multiple' => true,
                 'expanded' => false
             ])
-            ->add('vendors', EntityType::class,
+            ->add('vendor', EntityType::class,
             [
                 'label' => 'Product Vendor',
                 'class' => Vendor::class,

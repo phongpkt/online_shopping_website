@@ -73,10 +73,10 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         // line 29
         echo "        ";
         $this->displayBlock('nav', $context, $blocks);
-        // line 41
+        // line 43
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 44
+        // line 46
         echo "    </body>
 </html>
 ";
@@ -219,17 +219,34 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home</a></h3>
-                <h3><a class=\"nav-item nav-link\" href=\"\">Category</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"";
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
+        echo "\">Category</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"";
         // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
         echo "\">Product</a></h3>
-                <h3><a class=\"nav-item nav-link\" href=\"\">Customer</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"";
+        // line 35
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("customer_index");
+        echo "\">Customer</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"";
         // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_index");
         echo "\">Order</a></h3>
-                <h3><a class=\"nav-item nav-link\" href=\"\">Logout</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"";
+        // line 37
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_index");
+        echo "\">Vendor</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"";
+        // line 38
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employee_index");
+        echo "\">Employee</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"";
+        // line 39
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        echo "\">Logout</a></h3>
             </div>
         </nav>
         ";
@@ -241,7 +258,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
 
     }
 
-    // line 41
+    // line 43
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -251,7 +268,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 42
+        // line 44
         echo "        
         ";
         
@@ -269,7 +286,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
 
     public function getDebugInfo()
     {
-        return array (  255 => 42,  245 => 41,  230 => 36,  225 => 34,  220 => 32,  216 => 30,  206 => 29,  195 => 27,  186 => 25,  181 => 24,  172 => 22,  168 => 21,  165 => 20,  155 => 19,  143 => 14,  133 => 13,  121 => 9,  111 => 8,  92 => 5,  80 => 44,  77 => 41,  74 => 29,  72 => 19,  68 => 17,  66 => 13,  63 => 12,  60 => 8,  55 => 5,  49 => 1,);
+        return array (  272 => 44,  262 => 43,  248 => 39,  244 => 38,  240 => 37,  236 => 36,  232 => 35,  228 => 34,  224 => 33,  220 => 32,  216 => 30,  206 => 29,  195 => 27,  186 => 25,  181 => 24,  172 => 22,  168 => 21,  165 => 20,  155 => 19,  143 => 14,  133 => 13,  121 => 9,  111 => 8,  92 => 5,  80 => 46,  77 => 43,  74 => 29,  72 => 19,  68 => 17,  66 => 13,  63 => 12,  60 => 8,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -306,11 +323,13 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         <nav class=\"navbar navbar-expand navbar-dark bg-dark\" style=\"margin:0;padding:5\">
             <div class=\"nav navbar-nav\" style=\"margin:0;padding:5\">
                 <h3><a class=\"nav-item nav-link\" href=\"{{ path('home') }}\">Home</a></h3>
-                <h3><a class=\"nav-item nav-link\" href=\"\">Category</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"{{ path('category_index') }}\">Category</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"{{ path('product_index') }}\">Product</a></h3>
-                <h3><a class=\"nav-item nav-link\" href=\"\">Customer</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"{{ path('customer_index') }}\">Customer</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"{{ path('order_index') }}\">Order</a></h3>
-                <h3><a class=\"nav-item nav-link\" href=\"\">Logout</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"{{ path('vendor_index') }}\">Vendor</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"{{ path('employee_index') }}\">Employee</a></h3>
+                <h3><a class=\"nav-item nav-link\" href=\"{{ path('app_logout') }}\">Logout</a></h3>
             </div>
         </nav>
         {% endblock %}

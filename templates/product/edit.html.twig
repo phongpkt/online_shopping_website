@@ -30,14 +30,6 @@
                 }}
             </div>
             <div class="form-group">
-                {{ form_label (productForm.category) }}
-                {{ form_widget (productForm.category,
-                    {
-                        'attr' : {'class' : 'form-control'}
-                    })
-                }}
-            </div>
-            <div class="form-group">
                 {{ form_label (productForm.status) }}
                 {{ form_widget (productForm.status,
                     {
@@ -54,8 +46,16 @@
                 }}
             </div>
             <div class="form-group">
-                {{ form_label (productForm.vendors) }}
-                {{ form_widget (productForm.vendors,
+                {{ form_label (productForm.vendor) }}
+                {{ form_widget (productForm.vendor,
+                    {
+                        'attr' : {'class' : 'form-control'}
+                    })
+                }}
+            </div>
+            <div class="form-group">
+                {{ form_label (productForm.category) }}
+                {{ form_widget (productForm.category,
                     {
                         'attr' : {'class' : 'form-control'}
                     })
@@ -70,7 +70,7 @@
                 }}
             </div>
             <div class="form-gourp text-center mt-3">
-                <input type="submit" class="btn btn-primary"></input>
+                <input class="btn btn-primary" type="submit" value="Add" />
             </div>
             {{ form_end (productForm) }}
         </div>

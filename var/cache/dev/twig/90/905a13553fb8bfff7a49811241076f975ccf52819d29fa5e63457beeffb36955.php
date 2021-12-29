@@ -66,77 +66,116 @@ class __TwigTemplate_661024c334cb2fc5e8393efb801a16c2e0d514345dbd6fc39747880ea16
 
         // line 4
         echo "\t<div class=\"container-md col-md-8 mt-3 mb-3 text-center\">
-\t\t<a href=\"";
+\t\t";
         // line 5
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_add");
-        echo "\">
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 6
+            echo "\t\t<a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_add");
+            echo "\">
 \t\t\t<img src=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/add.png"), "html", null, true);
-        echo "\" width=\"200px\" height=\"220px\">
+            // line 7
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/add.png"), "html", null, true);
+            echo "\" width=\"200px\" height=\"220px\">
 \t\t</a>
-\t\t<table class=\"table table-responsive-md mt-3\">
+\t\t";
+        }
+        // line 10
+        echo "\t\t<table class=\"table table-responsive-md mt-3\">
 \t\t\t<thead>
 \t\t\t\t<tr>
 \t\t\t\t\t<th>Order ID</th>
 \t\t\t\t\t<th>Order Date</th>
+\t\t\t\t\t<th>Product</th>
 \t\t\t\t\t<th>Status</th>
-\t\t\t\t\t<th>Actions</th>
-\t\t\t\t</tr>
+\t\t\t\t\t";
+        // line 17
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 18
+            echo "\t\t\t\t\t<th>Actions</th>
+\t\t\t\t\t";
+        }
+        // line 20
+        echo "\t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
 \t\t\t\t";
-        // line 18
+        // line 23
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["order"]);
         foreach ($context['_seq'] as $context["_key"] => $context["order"]) {
-            // line 19
+            // line 24
             echo "\t\t\t\t\t<tr>
 \t\t\t\t\t\t<td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 20), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t<td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "date", [], "any", false, false, false, 21), "d/m/Y"), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t<td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "status", [], "any", false, false, false, 22), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "date", [], "any", false, false, false, 26), "d/m/Y"), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t<td>
+\t\t\t\t\t\t";
+            // line 28
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["order"], "product", [], "any", false, false, false, 28));
+            foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
+                // line 29
+                echo "\t\t\t\t\t\t\t";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 29), "html", null, true);
+                echo "
+\t\t\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 30
+            echo "  
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td>";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "status", [], "any", false, false, false, 32), "html", null, true);
+            echo "</td>
+\t\t\t\t\t\t";
+            // line 33
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                // line 34
+                echo "\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t<a class=\"btn btn-primary\" href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\" style=\"padding:10px;margin-right:20px\">
+                // line 35
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+                echo "\" style=\"padding:10px;margin-right:20px\">
 \t\t\t\t\t\t\t\tView detail
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\" style=\"margin-right:20px\">
+                // line 38
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 38)]), "html", null, true);
+                echo "\" style=\"margin-right:20px\">
 \t\t\t\t\t\t\t\t<img src=\"";
-            // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/edit.png"), "html", null, true);
-            echo "\" width=\"50\" height=\"50\">
+                // line 39
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/edit.png"), "html", null, true);
+                echo "\" width=\"50\" height=\"50\">
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 30)]), "html", null, true);
-            echo "\" onclick=\"return confirm('Do you want to delete this?')\">
+                // line 41
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 41)]), "html", null, true);
+                echo "\" onclick=\"return confirm('Do you want to delete this?')\">
 \t\t\t\t\t\t\t\t<img src=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/delete.png"), "html", null, true);
-            echo "\" width=\"50\" height=\"50\">
+                // line 42
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/delete.png"), "html", null, true);
+                echo "\" width=\"50\" height=\"50\">
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t</td>
-\t\t\t\t\t</tr>
+\t\t\t\t\t\t";
+            }
+            // line 46
+            echo "\t\t\t\t\t</tr>
 \t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['order'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 48
         echo "\t\t\t</tbody>
 \t\t</table>
 \t</div>
@@ -161,7 +200,7 @@ class __TwigTemplate_661024c334cb2fc5e8393efb801a16c2e0d514345dbd6fc39747880ea16
 
     public function getDebugInfo()
     {
-        return array (  140 => 36,  129 => 31,  125 => 30,  120 => 28,  116 => 27,  110 => 24,  105 => 22,  101 => 21,  97 => 20,  94 => 19,  90 => 18,  75 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  179 => 48,  172 => 46,  165 => 42,  161 => 41,  156 => 39,  152 => 38,  146 => 35,  143 => 34,  141 => 33,  137 => 32,  133 => 30,  124 => 29,  120 => 28,  115 => 26,  111 => 25,  108 => 24,  104 => 23,  99 => 20,  95 => 18,  93 => 17,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -170,16 +209,21 @@ class __TwigTemplate_661024c334cb2fc5e8393efb801a16c2e0d514345dbd6fc39747880ea16
 
 {% block body %}
 \t<div class=\"container-md col-md-8 mt-3 mb-3 text-center\">
+\t\t{% if is_granted(\"ROLE_ADMIN\") %}
 \t\t<a href=\"{{ path('order_add') }}\">
 \t\t\t<img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
 \t\t</a>
+\t\t{% endif %}
 \t\t<table class=\"table table-responsive-md mt-3\">
 \t\t\t<thead>
 \t\t\t\t<tr>
 \t\t\t\t\t<th>Order ID</th>
 \t\t\t\t\t<th>Order Date</th>
+\t\t\t\t\t<th>Product</th>
 \t\t\t\t\t<th>Status</th>
+\t\t\t\t\t{% if is_granted(\"ROLE_ADMIN\") %}
 \t\t\t\t\t<th>Actions</th>
+\t\t\t\t\t{% endif %}
 \t\t\t\t</tr>
 \t\t\t</thead>
 \t\t\t<tbody>
@@ -187,7 +231,13 @@ class __TwigTemplate_661024c334cb2fc5e8393efb801a16c2e0d514345dbd6fc39747880ea16
 \t\t\t\t\t<tr>
 \t\t\t\t\t\t<td>{{ order.id }}</td>
 \t\t\t\t\t\t<td>{{ order.date | date('d/m/Y')}}</td>
+\t\t\t\t\t\t<td>
+\t\t\t\t\t\t{% for product in order.product %}
+\t\t\t\t\t\t\t{{ product.name }}
+\t\t\t\t\t\t{% endfor %}  
+\t\t\t\t\t\t</td>
 \t\t\t\t\t\t<td>{{ order.status }}</td>
+\t\t\t\t\t\t{% if is_granted(\"ROLE_ADMIN\") %}
 \t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t<a class=\"btn btn-primary\" href=\"{{ path('order_detail', {'id': order.id}) }}\" style=\"padding:10px;margin-right:20px\">
 \t\t\t\t\t\t\t\tView detail
@@ -199,6 +249,7 @@ class __TwigTemplate_661024c334cb2fc5e8393efb801a16c2e0d514345dbd6fc39747880ea16
 \t\t\t\t\t\t\t\t<img src=\"{{ asset('button/delete.png') }}\" width=\"50\" height=\"50\">
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t</td>
+\t\t\t\t\t\t{% endif %}
 \t\t\t\t\t</tr>
 \t\t\t\t{% endfor %}
 \t\t\t</tbody>

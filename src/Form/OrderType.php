@@ -61,10 +61,8 @@ class OrderType extends AbstractType
                 'label' => 'Customer',
                 'class' => Customer::class,
                 'required' => true,
-                'attr' =>
-                [
-                    'minlength' => 3
-                ]
+                'multiple' => true,
+                'expanded' => false
             ])
             ->add('product', EntityType::class,
             [
