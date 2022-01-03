@@ -21,21 +21,27 @@ class VendorType extends AbstractType
                 'required' => true,
                 'attr' =>
                 [
-                    'minlength' => 3
+                    'minlength' => 3,
+                    'maxlength' => 30
                 ]
             ])
             ->add('address', TextType::class,
             [
                 'label' => 'Vendor address',
                 'required' => true,
-                'Widget' => 'single_text'
+                'attr' =>
+                [
+                    'minlength' => 3,
+                    'maxlength' => 30
+                ]
             ])
             ->add('contactNumber', TextType::class,
             [
-                'label' => 'Vender contactNumber',
+                'label' => 'Vendor Contact Number',
                 'required' => true,
                 'attr' => [
-                    'minlength' => 5
+                    'minlength' => 3,
+                    'maxlength' => 10
                 ]
             ])
             ->add('products', EntityType::class,

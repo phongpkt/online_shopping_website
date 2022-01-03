@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Vendor;
-use App\Form\vendorType;
+use App\Form\VendorType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -58,7 +58,7 @@ class VendorController extends AbstractController
      */
     public function vendorAdd (Request $request) {
         $vendor = new Vendor();
-        $form = $this->createForm(VendorType::class,$vendor);
+        $form = $this->createForm(VendorType::class, $vendor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -79,8 +79,8 @@ class VendorController extends AbstractController
      * @Route("vendor/edit/{id}", name="vendor_edit");
      */
     public function vendorEdit (Request $request, $id) {
-        $vendor = $this->getDoctrine()->getRepository(Vendor::class)->find($id);
-        $form = $this->createForm(VendorType::class,$vendor);
+        $vendor = $this->getDoctrine()->getRepository(VendorType::class)->find($id);
+        $form = $this->createForm(VendorType::class, $vendor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

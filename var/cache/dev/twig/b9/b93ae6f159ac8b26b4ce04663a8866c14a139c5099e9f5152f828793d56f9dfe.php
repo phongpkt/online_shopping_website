@@ -89,40 +89,60 @@ class __TwigTemplate_12c91578f1bd27ddce831d9d7f3f4e94367a517aaf1309ece83e06e150a
 \t\t\t\t<input type=\"search\" name=\"name\" required placeholder=\"Enter phone\">
 \t\t\t\t<input type=\"submit\" value=\"Search\">
 \t\t\t</form>
-\t\t</div>
-\t\t";
+\t\t\t<br>
+\t\t\t<a class=\"text-decoration-none\" href=\"";
         // line 16
-        if ((0 === twig_compare((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 16, $this->source); })()), null))) {
-            // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sort_product_by_prices_asc");
+        echo "\" style=\"margin-right:5px\">
+\t\t\t\t<img src=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/up.png"), "html", null, true);
+        echo "\" width=\"50px\" height=\"50px\">
+\t\t\t</a>
+\t\t\t<a class=\"text-decoration-none\" href=\"";
+        // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sort_product_by_prices_desc");
+        echo "\"style=\"margin-left:5px\">
+\t\t\t\t<img src=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/down.png"), "html", null, true);
+        echo "\" width=\"50px\" height=\"50px\">
+\t\t\t</a>
+\t\t</div>
+\t\t<br>
+\t\t";
+        // line 24
+        if ((0 === twig_compare((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 24, $this->source); })()), null))) {
+            // line 25
             echo "\t\t\t<h4 class=\"text text-warning\">No phone's found in the database</h4>
 \t\t";
         } else {
-            // line 19
+            // line 27
             echo "\t\t\t";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 19, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 27, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-                // line 20
+                // line 28
                 echo "\t\t\t\t<div class=\"row w3-margin-top\">
 \t\t\t\t\t<div class=\"w3-third\">
 \t\t\t\t\t\t<div class=\"w3-card\">
 \t\t\t\t\t\t\t<a href=\"";
-                // line 23
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 23)]), "html", null, true);
+                // line 31
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 31)]), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t<img src=\"";
-                // line 24
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("product/" . twig_get_attribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 24))), "html", null, true);
+                // line 32
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("product/" . twig_get_attribute($this->env, $this->source, $context["product"], "picture", [], "any", false, false, false, 32))), "html", null, true);
                 echo "\" style=\"width:30%\">
 \t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t<div class=\"w3-container\">
 \t\t\t\t\t\t\t\t<h4>";
-                // line 27
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 27), "html", null, true);
+                // line 35
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 35), "html", null, true);
                 echo "</h4>
 \t\t\t\t\t\t\t\t<h5>Price: \$";
-                // line 28
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 28), "html", null, true);
+                // line 36
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 36), "html", null, true);
                 echo "</h5>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
@@ -133,10 +153,10 @@ class __TwigTemplate_12c91578f1bd27ddce831d9d7f3f4e94367a517aaf1309ece83e06e150a
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 34
+            // line 42
             echo "\t\t";
         }
-        // line 35
+        // line 43
         echo "\t</div>
 ";
         
@@ -159,7 +179,7 @@ class __TwigTemplate_12c91578f1bd27ddce831d9d7f3f4e94367a517aaf1309ece83e06e150a
 
     public function getDebugInfo()
     {
-        return array (  140 => 35,  137 => 34,  125 => 28,  121 => 27,  115 => 24,  111 => 23,  106 => 20,  101 => 19,  97 => 17,  95 => 16,  87 => 11,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  160 => 43,  157 => 42,  145 => 36,  141 => 35,  135 => 32,  131 => 31,  126 => 28,  121 => 27,  117 => 25,  115 => 24,  108 => 20,  104 => 19,  99 => 17,  95 => 16,  87 => 11,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -178,7 +198,15 @@ class __TwigTemplate_12c91578f1bd27ddce831d9d7f3f4e94367a517aaf1309ece83e06e150a
 \t\t\t\t<input type=\"search\" name=\"name\" required placeholder=\"Enter phone\">
 \t\t\t\t<input type=\"submit\" value=\"Search\">
 \t\t\t</form>
+\t\t\t<br>
+\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('sort_product_by_prices_asc') }}\" style=\"margin-right:5px\">
+\t\t\t\t<img src=\"{{ asset('button/up.png') }}\" width=\"50px\" height=\"50px\">
+\t\t\t</a>
+\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('sort_product_by_prices_desc') }}\"style=\"margin-left:5px\">
+\t\t\t\t<img src=\"{{ asset('button/down.png') }}\" width=\"50px\" height=\"50px\">
+\t\t\t</a>
 \t\t</div>
+\t\t<br>
 \t\t{% if products == null %}
 \t\t\t<h4 class=\"text text-warning\">No phone's found in the database</h4>
 \t\t{% else %}

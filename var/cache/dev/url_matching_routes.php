@@ -24,6 +24,8 @@ return [
         '/getproductlist' => [[['_route' => 'product_list_api', '_controller' => 'App\\Controller\\ProductController::getproductListAPI'], null, ['GET' => 0], null, false, false, null]],
         '/products' => [[['_route' => 'product_index', '_controller' => 'App\\Controller\\ProductController::productIndex'], null, null, null, false, false, null]],
         '/product/add' => [[['_route' => 'product_add', '_controller' => 'App\\Controller\\ProductController::productAdd'], null, null, null, false, false, null]],
+        '/product/asc' => [[['_route' => 'sort_product_by_prices_asc', '_controller' => 'App\\Controller\\ProductController::sortProductPricedAsc'], null, null, null, false, false, null]],
+        '/product/desc' => [[['_route' => 'sort_product_by_prices_desc', '_controller' => 'App\\Controller\\ProductController::sortProductPricedDesc'], null, null, null, false, false, null]],
         '/product/search' => [[['_route' => 'search_product_by_name', '_controller' => 'App\\Controller\\ProductController::searchProductByName'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
@@ -51,44 +53,47 @@ return [
                 .')'
                 .'|/c(?'
                     .'|ategory/(?'
-                        .'|delete/([^/]++)(*:199)'
-                        .'|edit/([^/]++)(*:220)'
+                        .'|de(?'
+                            .'|tail/([^/]++)(*:202)'
+                            .'|lete/([^/]++)(*:223)'
+                        .')'
+                        .'|edit/([^/]++)(*:245)'
                     .')'
                     .'|ustomer/(?'
                         .'|de(?'
-                            .'|tail/([^/]++)(*:258)'
-                            .'|lete/([^/]++)(*:279)'
+                            .'|tail/([^/]++)(*:283)'
+                            .'|lete/([^/]++)(*:304)'
                         .')'
-                        .'|edit/([^/]++)(*:301)'
+                        .'|edit/([^/]++)(*:326)'
                     .')'
                 .')'
                 .'|/employee/(?'
                     .'|de(?'
-                        .'|tail/([^/]++)(*:342)'
-                        .'|lete/([^/]++)(*:363)'
+                        .'|tail/([^/]++)(*:367)'
+                        .'|lete/([^/]++)(*:388)'
                     .')'
-                    .'|edit/([^/]++)(*:385)'
+                    .'|edit/([^/]++)(*:410)'
                 .')'
                 .'|/order/(?'
                     .'|de(?'
-                        .'|tail/([^/]++)(*:422)'
-                        .'|lete/([^/]++)(*:443)'
+                        .'|tail/([^/]++)(*:447)'
+                        .'|lete/([^/]++)(*:468)'
                     .')'
-                    .'|edit/([^/]++)(*:465)'
+                    .'|edit/([^/]++)(*:490)'
                 .')'
                 .'|/product/(?'
                     .'|de(?'
-                        .'|tail/([^/]++)(*:504)'
-                        .'|lete/([^/]++)(*:525)'
+                        .'|tail/([^/]++)(*:529)'
+                        .'|lete/([^/]++)(*:550)'
                     .')'
-                    .'|edit/([^/]++)(*:547)'
+                    .'|edit/([^/]++)(*:572)'
                 .')'
                 .'|/vendor/(?'
                     .'|de(?'
-                        .'|tail/([^/]++)(*:585)'
-                        .'|lete/([^/]++)(*:606)'
+                        .'|tail/([^/]++)(*:610)'
+                        .'|lete/([^/]++)(*:631)'
                     .')'
-                    .'|edit/([^/]++)(*:628)'
+                    .'|edit/([^/]++)(*:653)'
                 .')'
             .')/?$}sDu',
     ],
@@ -100,23 +105,24 @@ return [
         114 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         124 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         159 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        199 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::categoryDelete'], ['id'], null, null, false, true, null]],
-        220 => [[['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::categoryEdit'], ['id'], null, null, false, true, null]],
-        258 => [[['_route' => 'customer_detail', '_controller' => 'App\\Controller\\CustomerController::customerDetail'], ['id'], null, null, false, true, null]],
-        279 => [[['_route' => 'customer_delete', '_controller' => 'App\\Controller\\CustomerController::customerDelete'], ['id'], null, null, false, true, null]],
-        301 => [[['_route' => 'customer_edit', '_controller' => 'App\\Controller\\CustomerController::customerEdit'], ['id'], null, null, false, true, null]],
-        342 => [[['_route' => 'employee_detail', '_controller' => 'App\\Controller\\EmployeeController::employeeDetail'], ['id'], null, null, false, true, null]],
-        363 => [[['_route' => 'employee_delete', '_controller' => 'App\\Controller\\EmployeeController::employeeDelete'], ['id'], null, null, false, true, null]],
-        385 => [[['_route' => 'employee_edit', '_controller' => 'App\\Controller\\EmployeeController::employeeEdit'], ['id'], null, null, false, true, null]],
-        422 => [[['_route' => 'order_detail', '_controller' => 'App\\Controller\\OrderController::orderDetail'], ['id'], null, null, false, true, null]],
-        443 => [[['_route' => 'order_delete', '_controller' => 'App\\Controller\\OrderController::orderDelete'], ['id'], null, null, false, true, null]],
-        465 => [[['_route' => 'order_edit', '_controller' => 'App\\Controller\\OrderController::orderEdit'], ['id'], null, null, false, true, null]],
-        504 => [[['_route' => 'product_detail', '_controller' => 'App\\Controller\\ProductController::productDetail'], ['id'], null, null, false, true, null]],
-        525 => [[['_route' => 'product_delete', '_controller' => 'App\\Controller\\ProductController::productDelete'], ['id'], null, null, false, true, null]],
-        547 => [[['_route' => 'product_edit', '_controller' => 'App\\Controller\\ProductController::productEdit'], ['id'], null, null, false, true, null]],
-        585 => [[['_route' => 'vendor_detail', '_controller' => 'App\\Controller\\VendorController::vendorDetail'], ['id'], null, null, false, true, null]],
-        606 => [[['_route' => 'vendor_delete', '_controller' => 'App\\Controller\\VendorController::vendorDelete'], ['id'], null, null, false, true, null]],
-        628 => [
+        202 => [[['_route' => 'category_detail', '_controller' => 'App\\Controller\\CategoryController::categoryDetail'], ['id'], null, null, false, true, null]],
+        223 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::categoryDelete'], ['id'], null, null, false, true, null]],
+        245 => [[['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::categoryEdit'], ['id'], null, null, false, true, null]],
+        283 => [[['_route' => 'customer_detail', '_controller' => 'App\\Controller\\CustomerController::customerDetail'], ['id'], null, null, false, true, null]],
+        304 => [[['_route' => 'customer_delete', '_controller' => 'App\\Controller\\CustomerController::customerDelete'], ['id'], null, null, false, true, null]],
+        326 => [[['_route' => 'customer_edit', '_controller' => 'App\\Controller\\CustomerController::customerEdit'], ['id'], null, null, false, true, null]],
+        367 => [[['_route' => 'employee_detail', '_controller' => 'App\\Controller\\EmployeeController::employeeDetail'], ['id'], null, null, false, true, null]],
+        388 => [[['_route' => 'employee_delete', '_controller' => 'App\\Controller\\EmployeeController::employeeDelete'], ['id'], null, null, false, true, null]],
+        410 => [[['_route' => 'employee_edit', '_controller' => 'App\\Controller\\EmployeeController::employeeEdit'], ['id'], null, null, false, true, null]],
+        447 => [[['_route' => 'order_detail', '_controller' => 'App\\Controller\\OrderController::orderDetail'], ['id'], null, null, false, true, null]],
+        468 => [[['_route' => 'order_delete', '_controller' => 'App\\Controller\\OrderController::orderDelete'], ['id'], null, null, false, true, null]],
+        490 => [[['_route' => 'order_edit', '_controller' => 'App\\Controller\\OrderController::orderEdit'], ['id'], null, null, false, true, null]],
+        529 => [[['_route' => 'product_detail', '_controller' => 'App\\Controller\\ProductController::productDetail'], ['id'], null, null, false, true, null]],
+        550 => [[['_route' => 'product_delete', '_controller' => 'App\\Controller\\ProductController::productDelete'], ['id'], null, null, false, true, null]],
+        572 => [[['_route' => 'product_edit', '_controller' => 'App\\Controller\\ProductController::productEdit'], ['id'], null, null, false, true, null]],
+        610 => [[['_route' => 'vendor_detail', '_controller' => 'App\\Controller\\VendorController::vendorDetail'], ['id'], null, null, false, true, null]],
+        631 => [[['_route' => 'vendor_delete', '_controller' => 'App\\Controller\\VendorController::vendorDelete'], ['id'], null, null, false, true, null]],
+        653 => [
             [['_route' => 'vendor_edit', '_controller' => 'App\\Controller\\VendorController::vendorEdit'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -22,6 +22,23 @@ class CategoryController extends AbstractController
         ]);
     }
     /**
+     * @Route("/category/detail/{id}", name="category_detail")
+     */
+    public function categoryDetail($id)
+    {
+        $category = $this->getDoctrine()->getRepository(Category::class)->find($id);
+        if ($category == null){
+            $this->addFlash("Error", "Category was not existed!");
+            return $this->redirectToRoute('category_index');
+        }
+        return $this->render(
+            "category/detail.html.twig",
+            [
+                'category' => $category
+            ]
+        );
+    }
+    /**
      * @Route("/category/delete/{id}", name = "category_delete")
      */
     public function categoryDelete($id) {

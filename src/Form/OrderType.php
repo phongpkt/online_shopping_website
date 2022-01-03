@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Customer;
 use App\Entity\Product;
 use App\Entity\Order;
+use App\Entity\Employee;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -60,8 +61,8 @@ class OrderType extends AbstractType
             [
                 'label' => 'Customer',
                 'class' => Customer::class,
-                'required' => true,
-                'multiple' => true,
+                'choice_label' => 'name',
+                'multiple' => false,
                 'expanded' => false
             ])
             ->add('product', EntityType::class,

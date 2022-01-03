@@ -4,19 +4,57 @@
 
 {% block nav %}{% endblock %}
 {% block body %}
-	<div class="container text-center col-5 mt-3">
+	<style>
+		* {
+		box-sizing: border-box;
+		font-family: Arial, Helvetica, sans-serif;
+		}
+		.container {
+		padding: 16px;
+		background-color: white;
+		}
+		.registerbtn {
+		background-color: #04AA6D;
+		color: white;
+		padding: 16px 20px;
+		margin: 8px 0;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		opacity: 0.9;
+		}
+		.registerbtn:hover {
+		opacity: 1;
+		}
+		input[type=text], input[type=password] {
+		width: 100%;
+		padding: 15px;
+		margin: 5px 0 22px 0;
+		display: inline-block;
+		border: none;
+		background: #f1f1f1;
+		}
+		input[type=text]:focus, input[type=password]:focus {
+		background-color: #ddd;
+		outline: none;
+		}
+	</style>
+	<div class="container">
 		<h1 class="text-primary text-uppercase">Account Registration</h1>
 
 		{{ form_start(registrationForm) }}
 		<div class="form-control">
-			<label>Username</label>
+			<label><b>Username</b></label>
 			{{ form_widget(registrationForm.username) }}
 		</div>
 		<div class="form-control">
-			<label>Password</label>
+			<label><b>Password</b></label>
 			{{ form_widget(registrationForm.plainPassword)}}
 		</div>
-		<button type="submit" class="btn btn-primary">Register</button>
+		<button type="submit" class="registerbtn">Register</button>
 		{{ form_end(registrationForm) }}
 	</div>
+	<div class="container signin">
+    	<p>Already have an account? <a href="{{ path('app_login') }}">Sign in</a>.</p>
+ 	</div>
 {% endblock %}

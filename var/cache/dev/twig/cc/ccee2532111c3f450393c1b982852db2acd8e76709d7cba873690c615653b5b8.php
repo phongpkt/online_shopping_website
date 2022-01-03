@@ -65,109 +65,63 @@ class __TwigTemplate_bd8bbad4e07deae1250631e0424480c2d33f352f26889d33373763b2f68
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "<div class=\"container-md col-md-8 mt-3 mb-3 text-center\">
-        ";
-        // line 5
+        echo "    <style>
+    .row{
+        width: 100%;
+        text-align: center;
+        margin-left: 7.5%;
+    }
+    </style>
+\t<div class=\"container text-center\">
+\t\t";
+        // line 12
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 6
-            echo "\t\t<a href=\"";
+            // line 13
+            echo "\t\t\t<a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_add");
             echo "\">
-\t\t\t<img src=\"";
-            // line 7
+\t\t\t\t<img src=\"";
+            // line 14
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/add.png"), "html", null, true);
             echo "\" width=\"200px\" height=\"220px\">
-\t\t</a>
+\t\t\t</a>
 \t\t";
         }
-        // line 10
-        echo "    <table class=\"table table-responsive-md mt-3\">
-        <thead>
-            <tr>
-                <th>Category ID</th>
-                <th>Category Name</th>
-                <th>Products</th>
-                ";
-        // line 16
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 17
-            echo "\t\t\t\t\t<th>Actions</th>
-\t\t\t\t";
-        }
-        // line 19
-        echo "            </tr>
-        </thead>
-        <tbody>
-            ";
-        // line 22
+        // line 17
+        echo "\t\t<div class=\"row\">
+\t\t\t";
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 22, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 23
-            echo "                <tr>
-                    <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 24), "html", null, true);
-            echo "</td>
-                    <td>";
+            // line 19
+            echo "\t\t\t\t<div class=\"col-md-3\" style=\"border:1px solid black; margin:20px;\">
+\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
+            // line 20
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 20)]), "html", null, true);
+            echo "\">
+\t\t\t\t\t\t<img src=\"";
+            // line 21
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("category/smartphone-icon.png"), "html", null, true);
+            echo "\" alt=\"Icon\" style=\"width:80%\" class=\"w3-hover-opacity\">
+\t\t\t\t\t</a>
+\t\t\t\t\t<div class=\"w3-container w3-white\">
+\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t<b>";
             // line 25
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 25), "html", null, true);
-            echo "</td>
-                    <td>
-                    ";
-            // line 27
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["category"], "products", [], "any", false, false, false, 27));
-            foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-                // line 28
-                echo "                        ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 28), "html", null, true);
-                echo "
-                        <br>
-                    ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 31
-            echo "                    </td>
-                    ";
-            // line 32
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 33
-                echo "\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
-                // line 34
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 34)]), "html", null, true);
-                echo "\" style=\"margin-right:20px\">
-\t\t\t\t\t\t\t\t<img src=\"";
-                // line 35
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/edit.png"), "html", null, true);
-                echo "\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
-                // line 37
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 37)]), "html", null, true);
-                echo "\" onclick=\"return confirm('Do you want to delete this?')\">
-\t\t\t\t\t\t\t\t<img src=\"";
-                // line 38
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/delete.png"), "html", null, true);
-                echo "\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t</td>
-\t\t\t\t\t";
-            }
-            // line 42
-            echo "                </tr>
-            ";
+            echo "</b>
+\t\t\t\t\t\t</p>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
-        echo "        </tbody>
-    </table>
-</div>
+        // line 30
+        echo "\t\t</div>
+\t</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -189,7 +143,7 @@ class __TwigTemplate_bd8bbad4e07deae1250631e0424480c2d33f352f26889d33373763b2f68
 
     public function getDebugInfo()
     {
-        return array (  168 => 44,  161 => 42,  154 => 38,  150 => 37,  145 => 35,  141 => 34,  138 => 33,  136 => 32,  133 => 31,  123 => 28,  119 => 27,  114 => 25,  110 => 24,  107 => 23,  103 => 22,  98 => 19,  94 => 17,  92 => 16,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  123 => 30,  112 => 25,  105 => 21,  101 => 20,  98 => 19,  94 => 18,  91 => 17,  85 => 14,  80 => 13,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -197,49 +151,34 @@ class __TwigTemplate_bd8bbad4e07deae1250631e0424480c2d33f352f26889d33373763b2f68
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-<div class=\"container-md col-md-8 mt-3 mb-3 text-center\">
-        {% if is_granted(\"ROLE_ADMIN\") %}
-\t\t<a href=\"{{ path('category_add') }}\">
-\t\t\t<img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
-\t\t</a>
+    <style>
+    .row{
+        width: 100%;
+        text-align: center;
+        margin-left: 7.5%;
+    }
+    </style>
+\t<div class=\"container text-center\">
+\t\t{% if is_granted(\"ROLE_ADMIN\") %}
+\t\t\t<a href=\"{{ path('category_add') }}\">
+\t\t\t\t<img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
+\t\t\t</a>
 \t\t{% endif %}
-    <table class=\"table table-responsive-md mt-3\">
-        <thead>
-            <tr>
-                <th>Category ID</th>
-                <th>Category Name</th>
-                <th>Products</th>
-                {% if is_granted(\"ROLE_ADMIN\") %}
-\t\t\t\t\t<th>Actions</th>
-\t\t\t\t{% endif %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for category in categories %}
-                <tr>
-                    <td>{{ category.id }}</td>
-                    <td>{{ category.name }}</td>
-                    <td>
-                    {% for product in category.products %}
-                        {{ product.name }}
-                        <br>
-                    {% endfor %}
-                    </td>
-                    {% if is_granted(\"ROLE_ADMIN\") %}
-\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('category_edit', {'id': category.id}) }}\" style=\"margin-right:20px\">
-\t\t\t\t\t\t\t\t<img src=\"{{ asset('button/edit.png') }}\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('category_delete', {'id': category.id}) }}\" onclick=\"return confirm('Do you want to delete this?')\">
-\t\t\t\t\t\t\t\t<img src=\"{{ asset('button/delete.png') }}\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t</td>
-\t\t\t\t\t{% endif %}
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+\t\t<div class=\"row\">
+\t\t\t{% for category in categories %}
+\t\t\t\t<div class=\"col-md-3\" style=\"border:1px solid black; margin:20px;\">
+\t\t\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('category_detail', {'id': category.id}) }}\">
+\t\t\t\t\t\t<img src=\"{{ asset('category/smartphone-icon.png') }}\" alt=\"Icon\" style=\"width:80%\" class=\"w3-hover-opacity\">
+\t\t\t\t\t</a>
+\t\t\t\t\t<div class=\"w3-container w3-white\">
+\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t<b>{{ category.name }}</b>
+\t\t\t\t\t\t</p>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t{% endfor %}
+\t\t</div>
+\t</div>
 {% endblock %}
 ", "category/index.html.twig", "C:\\xampp\\htdocs\\assignment\\webproject\\templates\\category\\index.html.twig");
     }

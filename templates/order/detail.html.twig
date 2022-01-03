@@ -37,7 +37,6 @@
 					{% endfor %}
 					</td>
 					<td></td>
-					<td>{{ order.status }}</td>
 					{% if is_granted("ROLE_ADMIN") %}
 						<td>
 							<a class="text-decoration-none" href="{{ path('order_edit', {'id': order.id}) }}">

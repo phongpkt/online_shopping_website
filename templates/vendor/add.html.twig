@@ -2,8 +2,8 @@
 
 {% block body %}
 <div class="container col-md-6 mt-3 mb-3">
-   <h2 class="text-center">ADD NEW VENDoR</h2>
-   <div class="col md-6"></div>
+   <h2 class="text-center">ADD NEW VENDOR</h2>
+   <div class="col md-6">
       {{ form_start (vendorForm) }}
          <div class="form-group">
             {{ form_label (vendorForm.name)}}
@@ -14,8 +14,8 @@
             }}
          </div>
          <div class="form-group">
-            {{ form_label (vendorForm.products)}}
-            {{ form_widget (vendorForm.products,
+            {{ form_label (vendorForm.address)}}
+            {{ form_widget (vendorForm.address,
                {
                   'attr' : {'class' : 'form-control'}
                })
@@ -30,8 +30,8 @@
             }}
          </div>
          <div class="form-group">
-            {{ form_label (vendorForm.address)}}
-            {{ form_widget (vendorForm.address,
+            {{ form_label (vendorForm.products)}}
+            {{ form_widget (vendorForm.products,
                {
                   'attr' : {'class' : 'form-control'}
                })

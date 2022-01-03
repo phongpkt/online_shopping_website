@@ -78,10 +78,15 @@ class ProductController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) 
         {
+            //lấy ảnh từ file upload
             $image = $product->getPicture();
+            //đặt tên mới cho ảnh
             $imgName = uniqid();
+            //lấy đuôi ảnh
             $imgExtension = $image->guessExtension();
+            //nối tên mới và đuôi ảnh thành tên hoàn chỉnh để lưu và DB
             $imageName = $imgName . "." . $imgExtension;
+            //di chuyển ảnh vào thư mục chỉ định
             try{
                 $image->move(
                     $this->getParameter('product_picture'), $imageName
@@ -89,8 +94,10 @@ class ProductController extends AbstractController
             }catch(FileException $e){
                 throwException($e);
             }
+            //lưu ảnh vào DB
             $product->setPicture($imageName);
-
+            
+            //đẩy dữ liệu từ form vào DB
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($product);
             $manager->flush();
@@ -138,6 +145,28 @@ class ProductController extends AbstractController
         return $this->renderForm("product/edit.html.twig",
         [
             'productForm' => $form
+        ]);
+    }
+    /**
+     * @Route("/product/asc", name="sort_product_by_prices_asc")
+     */
+    public function sortProductPricedAsc(ProductRepository $productRepository, Request $request){
+        $price = $request->get("price");
+        $products = $productRepository->sortProductPricedAsc($price);
+        return $this->render("product/index.html.twig",
+        [
+            'products' => $products
+        ]);
+    }
+    /**
+     * @Route("/product/desc", name="sort_product_by_prices_desc")
+     */
+    public function sortProductPricedDesc(ProductRepository $productRepository, Request $request){
+        $price = $request->get("price");
+        $products = $productRepository->sortProductPriceDesc($price);
+        return $this->render("product/index.html.twig",
+        [
+            'products' => $products
         ]);
     }
     /**

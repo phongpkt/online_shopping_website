@@ -59,24 +59,24 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         // line 8
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 13
+        // line 15
         echo "
         ";
-        // line 14
+        // line 16
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 18
+        // line 20
         echo "    </head>
     <body>
         ";
-        // line 20
+        // line 22
         $this->displayBlock('flash', $context, $blocks);
-        // line 30
+        // line 32
         echo "        ";
         $this->displayBlock('nav', $context, $blocks);
-        // line 44
+        // line 46
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 47
+        // line 49
         echo "    </body>
 </html>
 ";
@@ -120,6 +120,8 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         // line 9
         echo "        <!-- CSS -->
             <link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">
+            <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Raleway\">
+            <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
             <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
         ";
         
@@ -130,7 +132,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
 
     }
 
-    // line 14
+    // line 16
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -140,7 +142,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 15
+        // line 17
         echo "            <!-- JavaScript -->
             <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
         ";
@@ -152,7 +154,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
 
     }
 
-    // line 20
+    // line 22
     public function block_flash($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -162,14 +164,14 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "flash"));
 
-        // line 21
+        // line 23
         echo "            <div class=\"container\">
                 ";
-        // line 22
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 22, $this->source); })()), "flashes", [0 => "Error"], "method", false, false, false, 22));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "flashes", [0 => "Error"], "method", false, false, false, 24));
         foreach ($context['_seq'] as $context["_key"] => $context["flash"]) {
-            // line 23
+            // line 25
             echo "                    <p class=\"alert alert-warning\">";
             echo twig_escape_filter($this->env, $context["flash"], "html", null, true);
             echo " </p>
@@ -178,12 +180,12 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 27
         echo "                ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "flashes", [0 => "Success"], "method", false, false, false, 25));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "flashes", [0 => "Success"], "method", false, false, false, 27));
         foreach ($context['_seq'] as $context["_key"] => $context["flash"]) {
-            // line 26
+            // line 28
             echo "                    <p class=\"alert alert-success\">";
             echo twig_escape_filter($this->env, $context["flash"], "html", null, true);
             echo " </p>
@@ -192,7 +194,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
+        // line 30
         echo "            </div>
         ";
         
@@ -203,7 +205,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
 
     }
 
-    // line 30
+    // line 32
     public function block_nav($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -213,39 +215,39 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "nav"));
 
-        // line 31
+        // line 33
         echo "        <nav class=\"navbar navbar-expand navbar-dark bg-dark\" style=\"margin:0;padding:5\">
             <div class=\"nav navbar-nav\" style=\"margin:0;padding:5\">
                 <h3><a class=\"nav-item nav-link\" href=\"";
-        // line 33
+        // line 35
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"";
-        // line 34
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
         echo "\">Category</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"";
-        // line 35
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
         echo "\">Product</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"";
-        // line 36
+        // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("customer_index");
         echo "\">Customer</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"";
-        // line 37
+        // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_index");
         echo "\">Order</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"";
-        // line 38
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_index");
         echo "\">Vendor</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"";
-        // line 39
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employee_index");
         echo "\">Employee</a></h3>
                 <h3><a class=\"nav-item nav-link\" href=\"";
-        // line 40
+        // line 42
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Logout</a></h3>
             </div>
@@ -259,7 +261,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
 
     }
 
-    // line 44
+    // line 46
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -269,7 +271,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 45
+        // line 47
         echo "        
         ";
         
@@ -287,7 +289,7 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
 
     public function getDebugInfo()
     {
-        return array (  273 => 45,  263 => 44,  249 => 40,  245 => 39,  241 => 38,  237 => 37,  233 => 36,  229 => 35,  225 => 34,  221 => 33,  217 => 31,  207 => 30,  196 => 28,  187 => 26,  182 => 25,  173 => 23,  169 => 22,  166 => 21,  156 => 20,  144 => 15,  134 => 14,  121 => 9,  111 => 8,  92 => 5,  80 => 47,  77 => 44,  74 => 30,  72 => 20,  68 => 18,  66 => 14,  63 => 13,  60 => 8,  55 => 5,  49 => 1,);
+        return array (  275 => 47,  265 => 46,  251 => 42,  247 => 41,  243 => 40,  239 => 39,  235 => 38,  231 => 37,  227 => 36,  223 => 35,  219 => 33,  209 => 32,  198 => 30,  189 => 28,  184 => 27,  175 => 25,  171 => 24,  168 => 23,  158 => 22,  146 => 17,  136 => 16,  121 => 9,  111 => 8,  92 => 5,  80 => 49,  77 => 46,  74 => 32,  72 => 22,  68 => 20,  66 => 16,  63 => 15,  60 => 8,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -302,6 +304,8 @@ class __TwigTemplate_9590d7218e8aea45aa00d86a3f167decc7f01a61a9d634855c6693f3176
         {% block stylesheets %}
         <!-- CSS -->
             <link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">
+            <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Raleway\">
+            <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
             <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
         {% endblock %}
 

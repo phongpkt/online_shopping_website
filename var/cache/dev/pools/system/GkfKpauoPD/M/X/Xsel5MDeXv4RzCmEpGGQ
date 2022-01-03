@@ -1,0 +1,3 @@
+<?php //App%255CEntity%255CVendor%2523getContactNumber
+
+return [PHP_INT_MAX, []];

@@ -65,88 +65,69 @@ class __TwigTemplate_400ee7e7e0f7f6ca0fa88bc126584b9184a05ec378fcfe166adcdc1738f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "<div class=\"container-md col-md-8 mt-3 mb-3 text-center\">
-    ";
-        // line 5
+        echo "\t<style>
+\t\t.row {
+\t\t\twidth: 100%;
+\t\t\ttext-align: center;
+\t\t\tmargin-left: 7.5%;
+\t\t}
+\t\t.col-md-3{
+\t\t\tmargin:20px;
+\t\t}
+\t\t.circle {
+\t\t\tborder-radius: 50%;
+\t\t}
+\t</style>
+\t<div class=\"container text-center\">
+\t\t";
+        // line 18
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 6
-            echo "\t\t<a href=\"";
+            // line 19
+            echo "\t\t\t<a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_add");
             echo "\">
-\t\t\t<img src=\"";
-            // line 7
+\t\t\t\t<img src=\"";
+            // line 20
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/add.png"), "html", null, true);
             echo "\" width=\"200px\" height=\"220px\">
-\t\t</a>
-\t";
+\t\t\t</a>
+\t\t";
         }
-        // line 10
-        echo "    <table class=\"table table-responsive-md mt-3\">
-        <thead>
-            <tr>
-                <th>Vendor ID</th>
-                <th>Vendor Name</th>
-\t\t\t\t<th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            ";
-        // line 19
+        // line 23
+        echo "\t\t<div class=\"row\">
+\t\t\t";
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["vendors"]) || array_key_exists("vendors", $context) ? $context["vendors"] : (function () { throw new RuntimeError('Variable "vendors" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["vendors"]) || array_key_exists("vendors", $context) ? $context["vendors"] : (function () { throw new RuntimeError('Variable "vendors" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["vendor"]) {
-            // line 20
-            echo "                <tr>
-                    <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vendor"], "name", [], "any", false, false, false, 22), "html", null, true);
-            echo "</td>
-                    <td>
-                        <a class=\"btn btn-primary\" href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\" style=\"padding:10px;margin-right:20px\">
-                            View detail
-                        </a>
-                        ";
+            // line 25
+            echo "\t\t\t\t<div class=\"col-md-3\">
+\t\t\t\t\t<a href=\"";
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            echo "\">
+\t\t\t\t\t\t<img src=\"";
             // line 27
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 28
-                echo "                        <a class=\"text-decoration-none\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-                echo "\" style=\"margin-right:20px\">
-                            <img src=\"";
-                // line 29
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/edit.png"), "html", null, true);
-                echo "\" width=\"50\" height=\"50\">
-                        </a>
-                        <a class=\"text-decoration-none\" href=\"";
-                // line 31
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("vendor_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["vendor"], "id", [], "any", false, false, false, 31)]), "html", null, true);
-                echo "\" onclick=\"return confirm('Do you want to delete this?')\">
-                            <img src=\"";
-                // line 32
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/delete.png"), "html", null, true);
-                echo "\" width=\"50\" height=\"50\">
-                        </a>
-                        ";
-            }
-            // line 35
-            echo "                    </td>
-                </tr>
-            ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("team/customer.png"), "html", null, true);
+            echo "\" alt=\"Icon\" width=\"100%\" class=\"circle w3-hover-opacity\">
+\t\t\t\t\t</a>
+\t\t\t\t\t<div class=\"w3-container w3-white\">
+\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t<b>";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vendor"], "name", [], "any", false, false, false, 31), "html", null, true);
+            echo "</b>
+\t\t\t\t\t\t</p>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['vendor'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
-        echo "        </tbody>
-    </table>
-</div>
+        // line 36
+        echo "\t\t</div>
+\t</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -168,7 +149,7 @@ class __TwigTemplate_400ee7e7e0f7f6ca0fa88bc126584b9184a05ec378fcfe166adcdc1738f
 
     public function getDebugInfo()
     {
-        return array (  147 => 38,  139 => 35,  133 => 32,  129 => 31,  124 => 29,  119 => 28,  117 => 27,  111 => 24,  106 => 22,  102 => 21,  99 => 20,  95 => 19,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  129 => 36,  118 => 31,  111 => 27,  107 => 26,  104 => 25,  100 => 24,  97 => 23,  91 => 20,  86 => 19,  84 => 18,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -176,43 +157,40 @@ class __TwigTemplate_400ee7e7e0f7f6ca0fa88bc126584b9184a05ec378fcfe166adcdc1738f
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-<div class=\"container-md col-md-8 mt-3 mb-3 text-center\">
-    {% if is_granted(\"ROLE_ADMIN\") %}
-\t\t<a href=\"{{ path('vendor_add') }}\">
-\t\t\t<img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
-\t\t</a>
-\t{% endif %}
-    <table class=\"table table-responsive-md mt-3\">
-        <thead>
-            <tr>
-                <th>Vendor ID</th>
-                <th>Vendor Name</th>
-\t\t\t\t<th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for vendor in vendors %}
-                <tr>
-                    <td>{{ vendor.id }}</td>
-                    <td>{{ vendor.name }}</td>
-                    <td>
-                        <a class=\"btn btn-primary\" href=\"{{ path('vendor_detail', {'id': vendor.id}) }}\" style=\"padding:10px;margin-right:20px\">
-                            View detail
-                        </a>
-                        {% if is_granted(\"ROLE_ADMIN\") %}
-                        <a class=\"text-decoration-none\" href=\"{{ path('vendor_edit', {'id': vendor.id}) }}\" style=\"margin-right:20px\">
-                            <img src=\"{{ asset('button/edit.png') }}\" width=\"50\" height=\"50\">
-                        </a>
-                        <a class=\"text-decoration-none\" href=\"{{ path('vendor_delete', {'id': vendor.id}) }}\" onclick=\"return confirm('Do you want to delete this?')\">
-                            <img src=\"{{ asset('button/delete.png') }}\" width=\"50\" height=\"50\">
-                        </a>
-                        {% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+\t<style>
+\t\t.row {
+\t\t\twidth: 100%;
+\t\t\ttext-align: center;
+\t\t\tmargin-left: 7.5%;
+\t\t}
+\t\t.col-md-3{
+\t\t\tmargin:20px;
+\t\t}
+\t\t.circle {
+\t\t\tborder-radius: 50%;
+\t\t}
+\t</style>
+\t<div class=\"container text-center\">
+\t\t{% if is_granted(\"ROLE_ADMIN\") %}
+\t\t\t<a href=\"{{ path('vendor_add') }}\">
+\t\t\t\t<img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
+\t\t\t</a>
+\t\t{% endif %}
+\t\t<div class=\"row\">
+\t\t\t{% for vendor in vendors %}
+\t\t\t\t<div class=\"col-md-3\">
+\t\t\t\t\t<a href=\"{{ path('vendor_detail', {'id': vendor.id}) }}\">
+\t\t\t\t\t\t<img src=\"{{ asset('team/customer.png') }}\" alt=\"Icon\" width=\"100%\" class=\"circle w3-hover-opacity\">
+\t\t\t\t\t</a>
+\t\t\t\t\t<div class=\"w3-container w3-white\">
+\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t<b>{{vendor.name}}</b>
+\t\t\t\t\t\t</p>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t{% endfor %}
+\t\t</div>
+\t</div>
 {% endblock %}
 ", "vendor/index.html.twig", "C:\\xampp\\htdocs\\assignment\\webproject\\templates\\vendor\\index.html.twig");
     }

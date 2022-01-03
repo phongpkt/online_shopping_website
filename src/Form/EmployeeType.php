@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Employee;
 use App\Entity\Order;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -71,6 +72,7 @@ class EmployeeType extends AbstractType
                 [
                     'label' => 'Order',
                     'class' => Order::class,
+                    'required' => false,
                     'choice_label' => 'location',
                     'multiple' => true,
                     'expanded' => false

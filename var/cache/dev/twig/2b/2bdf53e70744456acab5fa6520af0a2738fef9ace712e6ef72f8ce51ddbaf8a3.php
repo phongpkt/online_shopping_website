@@ -65,92 +65,67 @@ class __TwigTemplate_e7773d88f68ba9fd7c0f4508eb19601c10e43be1fca70741ca3f9fb99c8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "\t<div class=\"container-md col-md-8 mt-3 mb-3 text-center\">
+        echo "\t<style>
+\t\t.row {
+\t\t\twidth: 100%;
+\t\t\ttext-align: center;
+\t\t\tmargin-left: 7.5%;
+\t\t}
+\t\t.col-md-3{
+\t\t\tborder:1px solid black; 
+\t\t\tmargin:20px;
+\t\t\tborder-radius: 50%;
+\t\t}
+\t</style>
+\t<div class=\"container text-center\">
 \t\t";
-        // line 5
+        // line 17
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 6
-            echo "\t\t<a href=\"";
+            // line 18
+            echo "\t\t\t<a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("customer_add");
             echo "\">
-\t\t\t<img src=\"";
-            // line 7
+\t\t\t\t<img src=\"";
+            // line 19
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("button/add.png"), "html", null, true);
             echo "\" width=\"200px\" height=\"220px\">
-\t\t</a>
+\t\t\t</a>
 \t\t";
         }
-        // line 10
-        echo "\t\t<table class=\"table table-responsive-md mt-3\">
-\t\t\t<thead>
-\t\t\t\t<tr>
-\t\t\t\t\t<th>Customer ID</th>
-\t\t\t\t\t<th>Customer Name</th>
-\t\t\t\t\t<th>Customer PhoneNumber</th>
-\t\t\t\t\t<th>Actions</th>
-\t\t\t\t</tr>
-\t\t\t</thead>
-\t\t\t<tbody>
-\t\t\t\t";
-        // line 20
+        // line 22
+        echo "\t\t<div class=\"row\">
+\t\t\t";
+        // line 23
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["customers"]) || array_key_exists("customers", $context) ? $context["customers"] : (function () { throw new RuntimeError('Variable "customers" does not exist.', 20, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["customers"]) || array_key_exists("customers", $context) ? $context["customers"] : (function () { throw new RuntimeError('Variable "customers" does not exist.', 23, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["customer"]) {
-            // line 21
-            echo "\t\t\t\t\t<tr>
-\t\t\t\t\t\t<td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["customer"], "id", [], "any", false, false, false, 22), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t<td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["customer"], "name", [], "any", false, false, false, 23), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t<td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["customer"], "phonenumber", [], "any", false, false, false, 24), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t<a class=\"btn btn-primary\" href=\"";
+            echo "\t\t\t\t<div class=\"col-md-3\">
+\t\t\t\t\t<a class=\"text-decoration-none\" href=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("customer_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["customer"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+            echo "\">
+\t\t\t\t\t\t<img src=\"";
             // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("customer_detail", ["id" => twig_get_attribute($this->env, $this->source, $context["customer"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            echo "\" style=\"padding:10px;margin-right:20px\">
-\t\t\t\t\t\t\t\tView detail
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t";
-            // line 29
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 30
-                echo "\t\t\t\t\t\t\t<a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("customer_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["customer"], "id", [], "any", false, false, false, 30)]), "html", null, true);
-                echo "\" style=\"margin-right:20px\">
-\t\t\t\t\t\t\t\t<img src=\"";
-                // line 31
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/edit.png"), "html", null, true);
-                echo "\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a href=\"";
-                // line 33
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("customer_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["customer"], "id", [], "any", false, false, false, 33)]), "html", null, true);
-                echo "\" onclick=\"return confirm('Do you want to delete this customer ?')\">
-\t\t\t\t\t\t\t\t<img src=\"";
-                // line 34
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/delete.png"), "html", null, true);
-                echo "\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t";
-            }
-            // line 37
-            echo "\t\t\t\t\t\t</td>
-\t\t\t\t\t</tr>
-\t\t\t\t";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("team/customer.png"), "html", null, true);
+            echo "\" alt=\"Icon\" style=\"width:80%;\" class=\"w3-hover-opacity\">
+\t\t\t\t\t</a>
+\t\t\t\t\t<div class=\"w3-container w3-white\">
+\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t<b>";
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["customer"], "name", [], "any", false, false, false, 30), "html", null, true);
+            echo "</b>
+\t\t\t\t\t\t</p>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['customer'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
-        echo "\t\t\t</tbody>
-\t\t</table>
+        // line 35
+        echo "\t\t</div>
 \t</div>
 ";
         
@@ -173,7 +148,7 @@ class __TwigTemplate_e7773d88f68ba9fd7c0f4508eb19601c10e43be1fca70741ca3f9fb99c8
 
     public function getDebugInfo()
     {
-        return array (  152 => 40,  144 => 37,  138 => 34,  134 => 33,  129 => 31,  124 => 30,  122 => 29,  116 => 26,  111 => 24,  107 => 23,  103 => 22,  100 => 21,  96 => 20,  84 => 10,  78 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  128 => 35,  117 => 30,  110 => 26,  106 => 25,  103 => 24,  99 => 23,  96 => 22,  90 => 19,  85 => 18,  83 => 17,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -181,44 +156,38 @@ class __TwigTemplate_e7773d88f68ba9fd7c0f4508eb19601c10e43be1fca70741ca3f9fb99c8
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-\t<div class=\"container-md col-md-8 mt-3 mb-3 text-center\">
+\t<style>
+\t\t.row {
+\t\t\twidth: 100%;
+\t\t\ttext-align: center;
+\t\t\tmargin-left: 7.5%;
+\t\t}
+\t\t.col-md-3{
+\t\t\tborder:1px solid black; 
+\t\t\tmargin:20px;
+\t\t\tborder-radius: 50%;
+\t\t}
+\t</style>
+\t<div class=\"container text-center\">
 \t\t{% if is_granted(\"ROLE_ADMIN\") %}
-\t\t<a href=\"{{ path('customer_add') }}\">
-\t\t\t<img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
-\t\t</a>
+\t\t\t<a href=\"{{ path('customer_add') }}\">
+\t\t\t\t<img src=\"{{ asset('button/add.png') }}\" width=\"200px\" height=\"220px\">
+\t\t\t</a>
 \t\t{% endif %}
-\t\t<table class=\"table table-responsive-md mt-3\">
-\t\t\t<thead>
-\t\t\t\t<tr>
-\t\t\t\t\t<th>Customer ID</th>
-\t\t\t\t\t<th>Customer Name</th>
-\t\t\t\t\t<th>Customer PhoneNumber</th>
-\t\t\t\t\t<th>Actions</th>
-\t\t\t\t</tr>
-\t\t\t</thead>
-\t\t\t<tbody>
-\t\t\t\t{% for customer in customers %}
-\t\t\t\t\t<tr>
-\t\t\t\t\t\t<td>{{customer.id }}</td>
-\t\t\t\t\t\t<td>{{customer.name}}</td>
-\t\t\t\t\t\t<td>{{customer.phonenumber}}</td>
-\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t<a class=\"btn btn-primary\" href=\"{{ path('customer_detail', {'id': customer.id}) }}\" style=\"padding:10px;margin-right:20px\">
-\t\t\t\t\t\t\t\tView detail
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t{% if is_granted(\"ROLE_ADMIN\") %}
-\t\t\t\t\t\t\t<a href=\"{{ path('customer_edit', {'id' : customer.id }) }}\" style=\"margin-right:20px\">
-\t\t\t\t\t\t\t\t<img src=\"{{ asset('images/edit.png') }}\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t<a href=\"{{ path('customer_delete', {'id' : customer.id }) }}\" onclick=\"return confirm('Do you want to delete this customer ?')\">
-\t\t\t\t\t\t\t\t<img src=\"{{ asset('images/delete.png') }}\" width=\"50\" height=\"50\">
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t{% endif %}
-\t\t\t\t\t\t</td>
-\t\t\t\t\t</tr>
-\t\t\t\t{% endfor %}
-\t\t\t</tbody>
-\t\t</table>
+\t\t<div class=\"row\">
+\t\t\t{% for customer in customers %}
+\t\t\t\t<div class=\"col-md-3\">
+\t\t\t\t\t<a class=\"text-decoration-none\" href=\"{{ path('customer_detail', {'id': customer.id}) }}\">
+\t\t\t\t\t\t<img src=\"{{ asset('team/customer.png') }}\" alt=\"Icon\" style=\"width:80%;\" class=\"w3-hover-opacity\">
+\t\t\t\t\t</a>
+\t\t\t\t\t<div class=\"w3-container w3-white\">
+\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t<b>{{customer.name}}</b>
+\t\t\t\t\t\t</p>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t{% endfor %}
+\t\t</div>
 \t</div>
 {% endblock %}
 ", "customer/index.html.twig", "C:\\xampp\\htdocs\\assignment\\webproject\\templates\\customer\\index.html.twig");
